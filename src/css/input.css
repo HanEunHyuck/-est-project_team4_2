@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* 드롭다운 */
+  [class^="dropdown"] {
+    @apply relative inline-block;
+  }
+
+  /* 드롭다운 버튼 */
+  [class^="dropdown"] .button-dropdown {
+    @apply flex items-center justify-between px-8 py-4 text-2xl text-left text-white bg-right bg-no-repeat border-2 border-white w-72 rounded-3xl bg-bg text-opacity-80;
+  }
+
+  /* 아이콘 */
+  .icon-arrow-down {
+    @apply w-5 h-3 transition bg-arrow-down;
+  }
+  [class^="dropdown"].active .icon-arrow-down {
+    @apply -rotate-180;
+  }
+
+  /* 옵션 */
+  [class^="dropdown"] .options-list {
+    @apply absolute w-full h-0 overflow-hidden transition-all rounded-3xl;
+  }
+  [class^="dropdown"] .options-list::-webkit-scrollbar {
+    @apply hidden;
+  }
+  [class^="dropdown"].active .options-list {
+    @apply overflow-y-auto border-2 border-white max-h-dropdown;
+  }
+  [class^="dropdown"] .options-list li {
+    @apply flex w-full h-16 text-white border-b-2 border-white bg-bg;
+  }
+  [class^="dropdown"] .options-list li.selected {
+    @apply text-black bg-active;
+  }
+  [class^="dropdown"] .options-list li:last-child {
+    @apply border-b-0;
+  }
+  [class^="dropdown"] .options-list li button {
+    @apply flex-1 text-2xl;
+  }
+
+  /* 더보기 버튼 */
+  .button-more {
+    @apply flex text-white;
+  }
+  .button-more span {
+    @apply mr-0.5;
+  }
+  .button-more .icon-arrow-more {
+    @apply w-6 h-6 bg-arrow-more;
+  }
+
+  /* 타이틀 */
+  .title1 {
+    @apply text-5xl text-white;
+  }
+  .title2 {
+    @apply leading-tight text-white text-40;
+  }
+  .title3 {
+    @apply text-4xl text-white;
+  }
+}
