@@ -1,0 +1,75 @@
+{
+    "movies": [
+      {
+        "Title": "The Divergent Series: Insurgent",
+        "Year": "2015",
+        "imdbID": "tt2908446",
+        "Type": "movie",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BMTgxOTYxMTg3OF5BMl5BanBnXkFtZTgwMDgyMzA2NDE@._V1_SX300.jpg"
+      },
+      {
+        "Title": "A Series of Unfortunate Events",
+        "Year": "2004",
+        "imdbID": "tt0339291",
+        "Type": "movie",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BMjE3MDM4NTg0NV5BMl5BanBnXkFtZTcwNjI4MTczMw@@._V1_SX300.jpg"
+      },
+      {
+        "Title": "Batman: The Animated Series",
+        "Year": "1992–1995",
+        "imdbID": "tt0103359",
+        "Type": "series",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BYjgwZWUzMz…WFkMWUtMDViMjMxNGIxNDUxXkEyXkFqcGc@._V1_SX300.jpg"
+      },
+      {
+        "Title": "A Series of Unfortunate Events",
+        "Year": "2017–2019",
+        "imdbID": "tt4834206",
+        "Type": "series",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BMTUxMjIzODI0NV5BMl5BanBnXkFtZTgwMDk3OTI2MDI@._V1_SX300.jpg"
+      },
+      {
+        "Title": "Scream: The TV Series",
+        "Year": "2015–2019",
+        "imdbID": "tt3921180",
+        "Type": "series",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BOGUyZGMzMT…WFkZGMtMmUzMTE0MTk1NWFlXkEyXkFqcGc@._V1_SX300.jpg"
+      },
+      {
+        "Title": "Spider-Man: The Animated Series",
+        "Year": "1994–1998",
+        "imdbID": "tt0112175",
+        "Type": "series",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BYWRkN2M1Nm…Tk2ODctYWJiOWNkNjg1OGY4XkEyXkFqcGc@._V1_SX300.jpg"
+      },
+      {
+        "Title": "From Dusk Till Dawn: The Series",
+        "Year": "2014–2016",
+        "imdbID": "tt3337194",
+        "Type": "series",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BMTQ5MTQxNDYxMV5BMl5BanBnXkFtZTgwNzk0MjkxNjE@._V1_SX300.jpg"
+      },
+      {
+        "Title": "Superman: The Animated Series",
+        "Year": "1996–2000",
+        "imdbID": "tt0115378",
+        "Type": "series",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BYmNiNTY1Yj…Tg4MmYtNWRkYTU2MTkxZjkwXkEyXkFqcGc@._V1_SX300.jpg"
+      },
+      {
+        "Title": "Mr. Bean: The Animated Series",
+        "Year": "2002–2019",
+        "imdbID": "tt0280277",
+        "Type": "series",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BZmY5MjE0ZG…WJmYTEtYWUyMzFkY2FmZDM2XkEyXkFqcGc@._V1_SX300.jpg"
+      },
+      {
+        "Title": "Lilo & Stitch: The Series",
+        "Year": "2003–2006",
+        "imdbID": "tt0364774",
+        "Type": "series",
+        "Poster": "https://m.media-amazon.com/images/M/MV5BNTlkMDFjYz…WFiOTUtZGZkMmRlNzA3Yzg3XkEyXkFqcGc@._V1_SX300.jpg"
+      }
+    ]
+  }
+  
