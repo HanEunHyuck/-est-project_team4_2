@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CINESCOPE</title>
+    <link rel="stylesheet" href="./../src/css/output.css" />
+  </head>
+  <body class="bg-bg">
+    <div class="flex items-center justify-center min-h-screen">
+      <section class="">
+        <h2 class="text-center title3 mb-22.5">Login</h2>
+        <div>
+          <div class="block input-wrap">
+            <label for="userId" class="hidden">userId</label>
+            <input type="text" id="userId" class="input-underline w-100" placeholder="USER ID" />
+            <button type="button" class="hidden button-clear">
+              <span class="sr-only">입력창 초기화</span>
+              <i class="icon-clear"></i>
+            </button>
+          </div>
+          <p class="mt-2 text-red-600 error-message"></p>
+        </div>
+
+        <div class="mt-10">
+          <div class="input-wrap">
+            <label for="password" class="hidden">비밀번호 입력</label>
+            <input type="password" id="password" class="input-underline w-100" placeholder="USER PW" />
+            <button type="button" class="hidden button-clear">
+              <span class="sr-only">입력창 초기화</span>
+              <i class="icon-clear"></i>
+            </button>
+          </div>
+          <p class="mt-2 text-red-600 error-message"></p>
+        </div>
+      </section>
+    </div>
+    <script type="module" src="./../src/js/index.js"></script>
+  </body>
+</html>

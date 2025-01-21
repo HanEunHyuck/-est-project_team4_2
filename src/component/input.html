@@ -3,27 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>button</title>
+    <title>input</title>
     <link rel="stylesheet" href="./../css/output.css" />
   </head>
   <body class="p-12 bg-bg">
     <h1 class="mb-6 text-4xl text-white">Inputs</h1>
+    <!-- 검색 인풋 -->
     <div class="input-wrap search">
-      <label for="title" class="hidden">직접입력</label>
-      <input type="text" id="title" class="round-border w-75" placeholder="년도 입력">
+      <label for="year" class="hidden">직접입력</label>
+      <!-- 너비 지정 ex) w-75 -->
+      <input type="text" id="year" class="round-border w-75" placeholder="년도 입력" />
       <button type="button" class="ml-auto">
         <span class="sr-only">검색</span>
         <i class="icon-search"></i>
       </button>
     </div>
 
+    <!-- 검색 인풋 -->
     <div class="input-wrap search">
       <label for="title" class="hidden">제목입력</label>
-      <input type="text" id="title" class="round-border w-140" placeholder="영화제목 입력">
+      <input type="text" id="title" class="round-border w-140" placeholder="영화제목 입력" />
       <button type="button" class="ml-auto">
         <span class="sr-only">검색</span>
         <i class="icon-search"></i>
       </button>
     </div>
+
+    <!-- 로그인 인풋 -->
+    <div>
+      <div class="input-wrap">
+        <label for="userId" class="hidden">userId</label>
+        <input type="text" id="userId" class="input-underline w-100" placeholder="USER ID" />
+        <button type="button" class="hidden button-clear">
+          <span class="sr-only">입력창 초기화</span>
+          <i class="icon-clear"></i>
+        </button>
+      </div>
+      <p class="mt-2 text-red-600 error-message"></p>
+    </div>
+
+    <script type="module" src="./../js/index.js"></script>
   </body>
 </html>
