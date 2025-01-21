@@ -10,7 +10,7 @@
 
   /* 드롭다운 버튼 */
   [class^="dropdown"] .button-dropdown {
-    @apply flex items-center justify-between px-8 py-4 text-2xl text-left text-white bg-right bg-no-repeat border-2 border-white w-72 rounded-3xl bg-bg text-opacity-80;
+    @apply flex items-center justify-between px-8 py-4 text-2xl text-left text-white bg-right bg-no-repeat w-72 bg-bg text-opacity-80;
   }
 
   /* 아이콘 */
@@ -55,6 +55,16 @@
     @apply w-6 h-6 bg-arrow-more;
   }
 
+  .button-more-loading {
+    @apply flex items-center justify-center w-48 h-16 text-white border active:opacity-80;
+  }
+  .button-more-loading span {
+    @apply text-xl mr-0.5;
+  }
+  .button-more-loading .icon-arrow-down-thin {
+    @apply aspect-square w-arrow-down-thin bg-arrow-down-thin;
+  }
+
   /* 타이틀 */
   .title1 {
     @apply text-5xl text-white;
@@ -64,5 +74,28 @@
   }
   .title3 {
     @apply text-4xl text-white;
+  }
+
+  /* 드롭다운, 인풋 둥근 테두리 */
+  .round-border {
+    @apply border-2 border-white rounded-4xl;
+  }
+
+  /* 인풋 */
+  .input-wrap {
+    @apply relative inline-block;
+  }
+
+  .input-wrap input {
+    @apply py-3 pr-12 text-xl text-white bg-transparent pl-9;
+  }
+
+  .input-wrap button {
+    @apply absolute -translate-y-1/2 right-6 top-1/2;
+  }
+
+  /* 아이콘 */
+  .icon-search {
+    @apply block w-6 h-8 bg-search;
   }
 }
