@@ -568,10 +568,6 @@ video {
   width: 18rem;
   align-items: center;
   justify-content: space-between;
-  border-radius: 1.5rem;
-  border-width: 2px;
-  --tw-border-opacity: 1;
-  border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
   --tw-bg-opacity: 1;
   background-color: rgb(25 25 25 / var(--tw-bg-opacity, 1));
   background-position: 15rem;
@@ -678,6 +674,33 @@ video {
   background-image: url('./../images/arrow_more.svg');
 }
 
+.button-more-loading {
+  display: flex;
+  height: 4rem;
+  width: 12rem;
+  align-items: center;
+  justify-content: center;
+  border-width: 1px;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.button-more-loading:active {
+  opacity: 0.8;
+}
+
+.button-more-loading span {
+  margin-right: 0.125rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.button-more-loading .icon-arrow-down-thin {
+  aspect-ratio: 1 / 1;
+  width: 26px;
+  background-image: url('./../images/arrow_down_thin.svg');
+}
+
 /* 타이틀 */
 
 .title1 {
@@ -701,8 +724,81 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
+/* 드롭다운, 인풋 둥근 테두리 */
+
+.round-border {
+  border-radius: 28px;
+  border-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
+}
+
+/* 인풋 */
+
+.input-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.input-wrap input {
+  background-color: transparent;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-right: 3rem;
+  padding-left: 2.25rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.input-wrap button {
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  --tw-translate-y: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+/* 아이콘 */
+
+.icon-search {
+  display: block;
+  height: 2rem;
+  width: 1.5rem;
+  background-image: url('./../images/search.svg');
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 .mb-6 {
   margin-bottom: 1.5rem;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.hidden {
+  display: none;
+}
+
+.w-75 {
+  width: 300px;
+}
+
+.w-140 {
+  width: 560px;
 }
 
 .bg-bg {

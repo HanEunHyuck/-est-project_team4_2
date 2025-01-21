@@ -16,7 +16,14 @@ module.exports = {
       },
       backgroundImage: {
         "arrow-down": "url('./../images/arrow_down.svg')",
+        "arrow-down-thin": "url('./../images/arrow_down_thin.svg')",
         "arrow-more": "url('./../images/arrow_more.svg')",
+        search: "url('./../images/search.svg')",
+      },
+      width: {
+        "arrow-down-thin": "26px",
+        75: "300px",
+        140: "560px",
       },
       transitionProperty: {
         height: "height",
@@ -24,6 +31,9 @@ module.exports = {
       },
       fontSize: {
         40: "40px",
+      },
+      borderRadius: {
+        "4xl": "28px",
       },
     },
   },
