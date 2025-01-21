@@ -87,15 +87,33 @@
   }
 
   .input-wrap input {
-    @apply py-3 pr-12 text-xl text-white bg-transparent pl-9;
+    @apply text-xl text-white bg-transparent;
   }
 
   .input-wrap button {
-    @apply absolute -translate-y-1/2 right-6 top-1/2;
+    @apply absolute -translate-y-1/2 top-1/2 right-2;
+  }
+
+  /* 인풋 검색 */
+  .input-wrap.search input {
+    @apply py-3 pr-12 pl-9;
+  }
+
+  .input-wrap.search button {
+    @apply right-6;
+  }
+
+  /* 인풋 - 로그인 */
+  .input-wrap .input-underline {
+    @apply py-3 pr-10 border-b-2 outline-none border-login-border focus:border-white;
   }
 
   /* 아이콘 */
   .icon-search {
     @apply block w-6 h-8 bg-search;
+  }
+
+  .icon-clear {
+    @apply block w-6 aspect-square bg-clear;
   }
 }
