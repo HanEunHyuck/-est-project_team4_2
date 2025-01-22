@@ -5,8 +5,136 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CINESCOPE</title>
     <link rel="stylesheet" href="./src/css/output.css" />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
   </head>
   <body class="bg-bg">
-    
+    <main class="relative main-swiper mb-22.5">
+      <!-- 메인 스와이퍼 -->
+      <!-- 이 구조를 만들 것 -->
+      <div class="swiper-wrapper">
+        <!-- <div class="swiper-slide"">
+          영화 포스터
+          <div class="swiper-inner">
+            <h2 class="text-white swiper-title title1">영화제목</h2>
+            <p class="text-primary">평점</p>
+          </div>
+        </div> -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </main>
+    <section class="section-search">
+      <!-- 검색 섹션 -->
+      <!-- 수정 필요
+        (1) 드롭다운 z-index: 999; 
+        (2) selectbox랑 input의 height 동일하게 
+        (3) 해야하는 것1: 직접입력 선택하면 input 박스 드러나게
+        (4) 해야하는 것2: selectbox 선택 적용되게-->
+      <div class="dropdown1">
+        <button type="button" class="button-dropdown round-border">
+          <span class="value"></span>
+          <i class="icon-arrow-down"></i>
+        </button>
+        <ul class="options-list"></ul>
+      </div>
+      <div class="dropdown2">
+        <button type="button" class="button-dropdown round-border">
+          <span class="value"></span>
+          <i class="icon-arrow-down"></i>
+        </button>
+        <ul class="options-list"></ul>
+      </div>
+      <div class="input-wrap search">
+        <label for="title" class="hidden">제목입력</label>
+        <input
+          type="text"
+          id="title"
+          class="round-border w-140"
+          placeholder="영화제목 입력"
+        />
+        <button type="button" class="ml-auto">
+          <span class="sr-only">검색</span>
+          <i class="icon-search"></i>
+        </button>
+      </div>
+    </section>
+    <!-- 평점순 스와이퍼 -->
+    <!-- 제목과 더보기 버튼을 space-between 써서 정렬하고 싶음... -->
+    <section class="section-rates">
+      <div class="flex items-end justify-between w-full">
+        <h2 class="title3">Rates</h2>
+        <button type="button" class="button-more">
+          <span>More</span>
+          <i class="icon-arrow-more"></i>
+        </button>
+      </div>
+      <div class="swiper rates-swiper">
+        <div class="swiper-wrapper">
+          <!-- 이 구조를 만들 것 -->
+          <!-- <div class="swiper-slide">
+            <div class="movie-poster">
+              <img src="포스터 이미지" alt="" />
+            </div>
+            <h3 class="text-2xl text-white">제목</h3>
+            <span class="text-xl">개봉 연도</span>
+            <span class="text-xl text-primary">평점</span>
+          </div> -->
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+    <!-- 최신개봉순 스와이퍼 -->
+    <section class="section-latest">
+      <div class="flex items-center justify-between">
+        <h2 class="title3">2025</h2>
+        <button type="button" class="button-more">
+          <span>More</span>
+          <i class="icon-arrow-more"></i>
+        </button>
+      </div>
+      <div class="swiper latest-swiper">
+        <div class="swiper-wrapper"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+    <!-- CINEMA MOVIE 배경 이미지 들어갈 자리 -->
+    <section class="section-series">
+      <div class="flex items-center justify-between">
+        <h2 class="title3">Series</h2>
+        <button type="button" class="button-more">
+          <span>More</span>
+          <i class="icon-arrow-more"></i>
+        </button>
+      </div>
+      <div class="flex series-wrapper">
+        <!-- 시리즈 데이터 2개 -->
+      </div>
+    </section>
+    <section class="section-type">
+      <h2 class="title3">Type</h2>
+      <div class="flex">
+        <div class="text-white type-card">Movie</div>
+        <div class="text-white type-card">Series</div>
+        <div class="text-white type-card">Episode</div>
+      </div>
+      <!-- Movie / Series / Episode -->
+      <!-- 여기는 이미지가 정해져있고... 
+       이미지를 클릭하면 movie / series / episode 모음으로 넘어가게 됨 -->
+    </section>
+    <!-- 4TEAM PROJECT 배경 이미지 들어갈 자리 -->
+    <footer class="footer"></footer>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="module" src="./src/js/index.js"></script>
   </body>
 </html>

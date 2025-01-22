@@ -1,5 +1,10 @@
 import { dropdown } from "./dropdown.js";
 import { clearInput, validation } from "./input.js";
+import { ratingSwiper } from "./ratesSwiper.js";
+import { latestSwiper } from "./latestSwiper.js";
+import { loadMainSwiper } from "./mainSwiper.js";
+import { loadSeries } from "./typeFilter.js";
+
 
 // 검색 필터
 // 년도 선택
@@ -14,4 +19,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
   clearInput();
   validation();
+
+  loadMainSwiper(); // 메인 스와이퍼
+  ratingSwiper(); // 평점순 스와이퍼
+  latestSwiper(); // 최신개봉순 스와이퍼
+  loadSeries(); // 시리즈
 });
+
