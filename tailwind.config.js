@@ -1,12 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./**/*.html"],
+  content: ["./**/*.{html,js}"],
   theme: {
     extend: {
       colors: {
         primary: "#FD3C1A",
         bg: "#191919",
         active: "#D9D9D9",
+        gray62: "#626262",
         "login-border": "#4D4B4B",
       },
       maxHeight: {
@@ -28,6 +29,9 @@ module.exports = {
         100: "400px",
         140: "560px",
       },
+      height: {
+        150: "600px",
+      },
       transitionProperty: {
         height: "height",
         spacing: "margin, padding",
@@ -38,8 +42,16 @@ module.exports = {
       borderRadius: {
         "4xl": "28px",
       },
+      borderWidth: {
+        0.5: "0.5px",
+      },
       margin: {
+        4.5: "18px",
         22.5: "90px",
+        24.5: "98px",
+        26.5: "106px",
+        29.5: "118px",
+        78: "312px",
       },
     },
   },

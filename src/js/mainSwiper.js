@@ -28,7 +28,7 @@ export async function loadMainSwiper() {
   
  
   try { // JSON 데이터 가져오기
-    const res = await fetch("../src/data/data.json"); 
+    const res = await fetch("./../src/data/data.json"); 
 
     if (!res.ok) {
       throw new Error(res.status);
@@ -56,7 +56,7 @@ export async function loadMainSwiper() {
           <img src="${posterSrc}" alt="" />
         </div>
         <div class="absolute swiper-inner">
-          <h2 class="text-white swiper-title title1">${movie.Title}</h2>
+          <h2 class="text-white swiper-title title1 font-semibold">${movie.Title}</h2>
           <p class="text-primary">${movie.imdbRating}</p>
         </div>
         `;

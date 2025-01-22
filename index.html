@@ -10,9 +10,12 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
+    <!-- Swiper JS 없어도 되는데~ 나중에 다시보기 -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="module" src="./src/js/index.js"></script>
   </head>
   <body class="bg-bg">
-    <main class="relative main-swiper mb-22.5">
+    <main class="relative main-swiper mb-26.5">
       <!-- 메인 스와이퍼 -->
       <!-- 이 구조를 만들 것 -->
       <div class="swiper-wrapper">
@@ -28,7 +31,7 @@
         <div class="swiper-pagination"></div>
       </div>
     </main>
-    <section class="section-search">
+    <section class="mb-24.5 section-search flex items-center justify-center">
       <!-- 검색 섹션 -->
       <!-- 수정 필요
         (1) 드롭다운 z-index: 999; 
@@ -36,14 +39,14 @@
         (3) 해야하는 것1: 직접입력 선택하면 input 박스 드러나게
         (4) 해야하는 것2: selectbox 선택 적용되게-->
       <div class="dropdown1">
-        <button type="button" class="button-dropdown round-border">
+        <button type="button" class="mr-6 button-dropdown round-border">
           <span class="value"></span>
           <i class="icon-arrow-down"></i>
         </button>
         <ul class="options-list"></ul>
       </div>
       <div class="dropdown2">
-        <button type="button" class="button-dropdown round-border">
+        <button type="button" class="mr-6 button-dropdown round-border">
           <span class="value"></span>
           <i class="icon-arrow-down"></i>
         </button>
@@ -65,9 +68,9 @@
     </section>
     <!-- 평점순 스와이퍼 -->
     <!-- 제목과 더보기 버튼을 space-between 써서 정렬하고 싶음... -->
-    <section class="section-rates">
-      <div class="flex items-end justify-between w-full">
-        <h2 class="title3">Rates</h2>
+    <section class="mb-20 mx-80 section-rates">
+      <div class="flex items-center justify-between w-full">
+        <h2 class="mb-5 font-bold title3">Rates</h2>
         <button type="button" class="button-more">
           <span>More</span>
           <i class="icon-arrow-more"></i>
@@ -91,9 +94,9 @@
       </div>
     </section>
     <!-- 최신개봉순 스와이퍼 -->
-    <section class="section-latest">
+    <section class="mb-26.5 mx-80 section-latest">
       <div class="flex items-center justify-between">
-        <h2 class="title3">2025</h2>
+        <h2 class="mb-5 font-bold title3">2025</h2>
         <button type="button" class="button-more">
           <span>More</span>
           <i class="icon-arrow-more"></i>
@@ -106,35 +109,103 @@
         <div class="swiper-pagination"></div>
       </div>
     </section>
-    <!-- CINEMA MOVIE 배경 이미지 들어갈 자리 -->
-    <section class="section-series">
+    <section class="mb-26.5 mx-12">
+      <img src="./src/images/main_bg_logo1.png" />
+    </section>
+    <section class="section-series mb-26.5 mx-80">
       <div class="flex items-center justify-between">
-        <h2 class="title3">Series</h2>
+        <h2 class="mb-5 font-bold title3">Series</h2>
         <button type="button" class="button-more">
           <span>More</span>
           <i class="icon-arrow-more"></i>
         </button>
       </div>
-      <div class="flex series-wrapper">
+      <div
+        class="grid items-center justify-center grid-cols-2 gap-5 overflow-hidden series-wrapper h-150"
+      >
         <!-- 시리즈 데이터 2개 -->
+        <!-- 대부분의 포스터가 세로가 길어서 사이즈 지정을 어떻게 해야 
+         보기 좋은 비율로 나올지 고민해 봐야할 것 같음.........
+         그리고 포스터 이미지가 고화질이 아니라 많이 깨짐(대체 고화질은 어떻게?) 
+         방법: 포스터 URL의 SX300가 가로 300을 의미... SX1000 으로 바꾸면 고화질-->
       </div>
     </section>
-    <section class="section-type">
-      <h2 class="title3">Type</h2>
-      <div class="flex">
-        <div class="text-white type-card">Movie</div>
-        <div class="text-white type-card">Series</div>
-        <div class="text-white type-card">Episode</div>
+    <section class="section-type mb-26.5 mx-80">
+      <h2 class="mb-5 font-bold title3">Type</h2>
+      <div class="flex items-center justify-center gap-5">
+        <div
+          class="text-white transition-transform duration-300 hover:scale-105"
+        >
+          <img src="./src/images/frame_movie.png" alt="watch more movies" />
+        </div>
+        <div
+          class="text-white transition-transform duration-300 hover:scale-105"
+        >
+          <img src="./src/images/frame_series.png" alt="watch more series" />
+        </div>
+        <div
+          class="text-white transition-transform duration-300 hover:scale-105"
+        >
+          <img src="./src/images/frame_episode.png" alt="watch more episodes" />
+        </div>
       </div>
-      <!-- Movie / Series / Episode -->
-      <!-- 여기는 이미지가 정해져있고... 
-       이미지를 클릭하면 movie / series / episode 모음으로 넘어가게 됨 -->
+      <!-- 이미지를 클릭하면 movie / series / episode 모음으로 넘어가게 됨 -->
     </section>
-    <!-- 4TEAM PROJECT 배경 이미지 들어갈 자리 -->
-    <footer class="footer"></footer>
-
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script type="module" src="./src/js/index.js"></script>
+    <section class="mb-26.5 objec-right mx-12 flex">
+      <img src="./src/images/main_bg_logo2.png" class="ml-auto" />
+      <button class="fixed z-10 w-20 top-button bottom-5 right-5" type="button">
+        <img src="./src/images/btn_top.svg" alt="scroll to top" />
+      </button>
+    </section>
+    <!-- 푸터 -->
+    <footer class="flex-col justify-center mx-12 text-white">
+      <div class="flex border-t-0.5 border-white mb-9 pt-9">
+        <h2 class="flex-1 text-3xl font-bold">estsoft</h2>
+        <div class="flex-1 text-lg text-right">
+          <a href="#"><span>privacy policy</span></a>
+          <a href="#"><span class="ml-29.5">Terms of Use</span></a>
+          <a href="#"><span class="ml-29.5">announcement</span></a>
+          <a href="#"><span class="ml-29.5">sidemap</span></a>
+        </div>
+      </div>
+      <div class="mb-20 text-lg">
+        <!-- 각각 앞에 svg 아이콘 넣는 법... -->
+        <a href="https://maps.app.goo.gl/Y5iuvyFKy7mHWRaQ6">
+          <div class="flex items-center mb-3.5">
+            <img
+              src="./src/images/map_pin.svg"
+              alt="Address Introduction"
+              class="mr-4.5"
+            />
+            <span>1464-30 Seocho-dong, Seocho-gu, Seoul (06711)</span>
+          </div>
+        </a>
+        <a href="http://www.estsoft.co.kr/">
+          <div class="flex items-center">
+            <img
+              src="./src/images/globe.svg"
+              alt="homepage link"
+              class="mr-4.5"
+            />
+            <span>http://www.estsoft.co.kr/</span>
+          </div>
+        </a>
+      </div>
+      <div class="flex mb-78">
+        <span class="flex-1">
+          copyright ⓒ 2025. eassoft 4team. All right reserved
+        </span>
+        <div class="flex-1 text-right">
+          <span>TEL : <a href="tel:02-123-4566">02 - 123 - 4566</a></span>
+          <span class="ml-32"
+            >FAX : <a href="tel:02-123-4567">02 - 123 - 4567</a></span
+          >
+          <span class="ml-32"
+            >E-MAIL :
+            <a href="mailto:estsoft@gmail.com">estsoft@gmail.com</a></span
+          >
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
