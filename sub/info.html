@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Info</title>
+    <link rel="stylesheet" href="./src/css/output.css" />
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="module" src="./src/js/index.js"></script>
+  </head>
+  <section class="info">
+    <body class="min-h-screen p-6 font-sans text-white bg-bg">
+      <div class="relative type-swiper mb-26.5 container mx-auto max-w-7xl">
+        <div class="flex items-center gap-4 mb-4">
+          <h1 class="text-2xl font-semibold">Venom: The Last Dance</h1>
+          <button
+            class="text-sm text-gray-400 hover:text-white"
+            onclick="shareMovie()"
+          >
+            share
+          </button>
+        </div>
+
+        <div class="flex items-center gap-2 mb-8 text-sm text-gray-400">
+          <span>2024.12.02</span>
+          <span>•</span>
+          <span>120min</span>
+          <div class="flex ml-2 stars"></div>
+        </div>
+
+        <div class="grid gap-8 mb-8 md:grid-cols-2">
+          <div class="leading-relaxed text-gray-400">
+            Eddie Brock, a just and passionate reporter who will not sacrifice
+            himself for the truth. While chasing after the giant corporation
+            Life Foundation, he infiltrates their office and is suddenly
+            attacked by an alien organism Symbiote in the laboratory. Eddie
+            Brock, who came to coexist with the Symbiote, is finally reborn as a
+            more powerful Venom and controls it. Eddie Brock will to deal only
+            with evil beings. Venom is unable to control his violent power...
+            Will you dominate or be dominated?
+          </div>
+          <img
+            src="~.png"
+            alt="Venom movie still"
+            class="object-cover w-full h-auto max-w-lg rounded-lg"
+          />
+        </div>
+
+        <div class="mb-8">
+          <h2 class="mb-4 text-xl font-semibold">movie information</h2>
+          <div class="grid grid-cols-[auto_1fr] gap-4">
+            <div class="text-gray-400">Genre</div>
+            <div>
+              Antihero, action, science fiction, thriller, mystery, adventure,
+              horror, dark fantasy
+            </div>
+            <div class="text-gray-400">Supervision</div>
+            <div>Ruben Samuel Fleischer</div>
+            <div class="text-gray-400">Appearance</div>
+            <div>Eddie Brock / Venom - Tom Hardy</div>
+          </div>
+        </div>
+        <!-- 비슷한 타입별별 스와이퍼 -->
+        <section class="mb-26.5 mx-80 section-type">
+          <div class="flex items-center justify-between">
+            <h2 class="mb-5 font-bold title3">Similar type</h2>
+            <button type="button" class="button-more">
+              <span>More</span>
+              <i class="icon-arrow-more"></i>
+            </button>
+          </div>
+          <div class="swiper typeswiper">
+            <div class="swiper-wrapper"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </section>
+      </div>
+    </body>
+  </section>
+</html>
