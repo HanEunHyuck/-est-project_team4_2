@@ -4,6 +4,7 @@ import { ratingSwiper } from "./ratesSwiper.js";
 import { latestSwiper } from "./latestSwiper.js";
 import { loadMainSwiper } from "./mainSwiper.js";
 import { loadSeries } from "./typeFilter.js";
+import { SearchResult } from "./search.js";
 
 
 // 검색 필터
@@ -13,6 +14,7 @@ const years = ["모든 년도", "2023", "2022", "2021", "2020", "직접 입력"]
 // 검색 내용 선택
 const content = ["제목", "내용"];
 
+const searchBtn = document.querySelector('.search-btn')
 window.addEventListener("DOMContentLoaded", () => {
   if (document.querySelector(".dropdown1")) dropdown("dropdown1", years);
   if (document.querySelector(".dropdown2")) dropdown("dropdown2", content);
@@ -24,5 +26,10 @@ window.addEventListener("DOMContentLoaded", () => {
   ratingSwiper(); // 평점순 스와이퍼
   latestSwiper(); // 최신개봉순 스와이퍼
   loadSeries(); // 시리즈
+  
 });
 
+
+searchBtn.addEventListener('click' ,()=> {
+  SearchResult()
+})
