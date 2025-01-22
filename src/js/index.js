@@ -5,6 +5,7 @@ import { latestSwiper } from "./latestSwiper.js";
 import { loadMainSwiper } from "./mainSwiper.js";
 import { loadSeries } from "./typeFilter.js";
 import { scrollToTop } from "./scroll.js";
+import { SearchResult } from "./search.js";
 
 // 검색 필터
 // 년도 선택
@@ -28,4 +29,10 @@ loadSeries(); // 시리즈
 const topButton = document.querySelector(".top-button");
 topButton.addEventListener("click", () => {
   scrollToTop();
+});
+
+const searchBtn = document.querySelector(".search-btn");
+
+searchBtn.addEventListener("click", () => {
+  SearchResult();
 });
