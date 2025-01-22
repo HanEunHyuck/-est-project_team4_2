@@ -1,6 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Roboto", sans-serif;
+  }
+}
 
 @layer components {
   /* 드롭다운 */
@@ -10,7 +18,7 @@
 
   /* 드롭다운 버튼 */
   [class^="dropdown"] .button-dropdown {
-    @apply flex items-center justify-between px-8 py-4 text-2xl text-left text-white bg-right bg-no-repeat w-72 bg-bg text-opacity-80;
+    @apply flex items-center justify-between px-8 py-3 text-2xl text-left text-white bg-right bg-no-repeat w-72 bg-bg text-opacity-80;
   }
 
   /* 아이콘 */
@@ -75,6 +83,9 @@
   .title3 {
     @apply text-4xl text-white; 
   }
+  .title4 {
+    @apply text-2xl text-white;
+  }
 
   /* 드롭다운, 인풋 둥근 테두리 */
   .round-border {
@@ -87,11 +98,15 @@
   }
 
   .input-wrap input {
-    @apply text-xl text-white bg-transparent;
+    @apply text-2xl text-white bg-transparent;
   }
 
   .input-wrap button {
     @apply absolute -translate-y-1/2 top-1/2 right-2;
+  }
+
+  .input-wrap + .error-message {
+    @apply mt-2 text-red-600;
   }
 
   /* 인풋 검색 */

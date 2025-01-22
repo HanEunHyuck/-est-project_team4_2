@@ -6,7 +6,6 @@ import { loadMainSwiper } from "./mainSwiper.js";
 import { loadSeries } from "./typeFilter.js";
 import { scrollToTop } from "./scroll.js";
 
-
 // 검색 필터
 // 년도 선택
 const years = ["모든 년도", "2023", "2022", "2021", "2020", "직접 입력"];
@@ -14,22 +13,19 @@ const years = ["모든 년도", "2023", "2022", "2021", "2020", "직접 입력"]
 // 검색 내용 선택
 const content = ["제목", "내용"];
 
-window.addEventListener("DOMContentLoaded", () => {
-  if (document.querySelector(".dropdown1")) dropdown("dropdown1", years);
-  if (document.querySelector(".dropdown2")) dropdown("dropdown2", content);
+if (document.querySelector(".dropdown1")) dropdown("dropdown1", years);
+if (document.querySelector(".dropdown2")) dropdown("dropdown2", content);
 
-  clearInput();
-  validation();
+clearInput();
+validation();
 
-  loadMainSwiper(); // 메인 스와이퍼
-  ratingSwiper(); // 평점순 스와이퍼
-  latestSwiper(); // 최신개봉순 스와이퍼
-  loadSeries(); // 시리즈
+loadMainSwiper(); // 메인 스와이퍼
+ratingSwiper(); // 평점순 스와이퍼
+latestSwiper(); // 최신개봉순 스와이퍼
+loadSeries(); // 시리즈
 
-  // 스크롤 탑
-  const topButton = document.querySelector('.top-button');
-  topButton.addEventListener('click', () => {
-    scrollToTop(); 
-  });
+// 스크롤 탑
+const topButton = document.querySelector(".top-button");
+topButton.addEventListener("click", () => {
+  scrollToTop();
 });
-
