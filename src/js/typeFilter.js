@@ -2,7 +2,7 @@
 export async function loadSeries() {
   try {
     // JSON 데이터 가져오기
-    const response = await fetch("../src/data/data.json");
+    const response = await fetch("./../src/data/data.json");
     const data = await response.json();
 
     // "Type" : "series" 데이터 필터링
@@ -21,11 +21,12 @@ export async function loadSeries() {
 
     selectedData.forEach((item) => {
       const seriesEl = document.createElement("div");
-      seriesEl.classList.add("series-item");
+      seriesEl.classList.add("series-item",
+        "flex", "items-center", "justify-center", "relative", "w-full", "h-full");
       // Poster 빈값이면 대체이미지 쓰기 (img.png 경로 바꿀 것)
       const posterSrc = item.Poster === "N/A" || !item.Poster ? "img.png" : item.Poster;
       seriesEl.innerHTML = `
-          <img src="${posterSrc}" alt="${item.Title}">
+          <img src="${posterSrc}" alt="${item.Title}" class="w-full h-full object-center object-cover transition-transform duration-300 hover:scale-105">
       `;
 
       seriesWrapper.appendChild(seriesEl);

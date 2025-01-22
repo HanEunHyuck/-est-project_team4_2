@@ -39,7 +39,7 @@ export async function latestSwiper(){
 
   
     try { // JSON 데이터 가져오기
-        const res = await fetch("../src/data/data.json");
+        const res = await fetch("./../src/data/data.json");
 
         if (!res.ok) {
             throw new Error(res.status);
@@ -64,12 +64,12 @@ export async function latestSwiper(){
             const posterSrc = movie.Poster === "N/A" || !movie.Poster ? "img.png" : movie.Poster;
             slide.classList.add("swiper-slide");
             slide.innerHTML = `
-                <div class="movie-poster">
+                <div class="mb-5 transition-transform duration-300 hover:scale-105">
                     <img src="${posterSrc}" alt="" />
                 </div>
-                <h3 class="text-2xl text-white">${movie.Title}</h3>
+                <h3 class="text-2xl text-white mb-4 font-semibold">${movie.Title}</h3>
                 <div>
-                    <span class="text-xl">${movie.Year}</span>
+                    <span class="text-xl text-gray62 mr-4.5">${movie.Year}</span>
                     <span class="text-xl text-primary">${movie.imdbRating}</span>
                 </div>
             `;

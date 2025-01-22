@@ -4,6 +4,7 @@ import { ratingSwiper } from "./ratesSwiper.js";
 import { latestSwiper } from "./latestSwiper.js";
 import { loadMainSwiper } from "./mainSwiper.js";
 import { loadSeries } from "./typeFilter.js";
+import { scrollToTop } from "./scroll.js";
 
 
 // 검색 필터
@@ -24,5 +25,11 @@ window.addEventListener("DOMContentLoaded", () => {
   ratingSwiper(); // 평점순 스와이퍼
   latestSwiper(); // 최신개봉순 스와이퍼
   loadSeries(); // 시리즈
+
+  // 스크롤 탑
+  const topButton = document.querySelector('.top-button');
+  topButton.addEventListener('click', () => {
+    scrollToTop(); 
+  });
 });
 

@@ -73,7 +73,7 @@
     @apply leading-tight text-white text-40;
   }
   .title3 {
-    @apply text-4xl text-white;
+    @apply text-4xl text-white; 
   }
 
   /* 드롭다운, 인풋 둥근 테두리 */
