@@ -34,6 +34,11 @@ module.exports = {
       },
       height: {
         150: "600px",
+        162.5: "650px",
+        175: "700px",
+      },
+      aspectRatio: {
+        '3/4' : '305 / 400',
       },
       transitionProperty: {
         height: "height",
@@ -41,6 +46,7 @@ module.exports = {
       },
       fontSize: {
         40: "40px",
+        44: "44px",
       },
       borderRadius: {
         "4xl": "28px",
@@ -50,11 +56,11 @@ module.exports = {
       },
       margin: {
         4.5: "18px",
+        7.5: "30px",
         22.5: "90px",
         24.5: "98px",
         26.5: "106px",
         29.5: "118px",
-        78: "312px",
       },
     },
   },
