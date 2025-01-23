@@ -22,11 +22,13 @@ export async function loadSeries() {
     selectedData.forEach((item) => {
       const seriesEl = document.createElement("div");
       seriesEl.classList.add("series-item",
-        "flex", "items-center", "justify-center", "relative", "w-full", "h-full");
+        "flex", "justify-center", "relative", "w-full", "h-full");
       // Poster 빈값이면 대체이미지 쓰기 (img.png 경로 바꿀 것)
-      const posterSrc = item.Poster === "N/A" || !item.Poster ? "img.png" : item.Poster;
+      const posterSrc = item.Poster === "N/A" || !item.Poster ? "img.png" : item.Poster.replace("SX300", "SX1000");
       seriesEl.innerHTML = `
-          <img src="${posterSrc}" alt="${item.Title}" class="w-full h-full object-center object-cover transition-transform duration-300 hover:scale-105">
+          <img src="${posterSrc}" alt="${item.Title}" 
+            class="w-full h-full object-center object-cover
+            transition-transform duration-300 hover:scale-105">
       `;
 
       seriesWrapper.appendChild(seriesEl);

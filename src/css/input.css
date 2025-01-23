@@ -143,4 +143,28 @@
   .spinner {
     @apply w-20 h-20 border-8 rounded-full border-login-border animate-spin border-t-white;
   }
+  
+}
+/* 스와이퍼 옵션 */
+.swiper-pagination-bullet {
+  @apply bg-active mr-7.5 !important;
+}
+.swiper-pagination-bullet-active {
+  @apply bg-primary !important;
+}
+.swiper-button-next {
+  background: url(./../images/swiper_arrow_next.svg) no-repeat center;
+  background-size: contain;
+  width: 50px !important; 
+  height: 50px !important;
+}
+.swiper-button-prev {
+  background: url(./../images/swiper_arrow_prev.svg) no-repeat center;
+  background-size: contain;
+  width: 50px !important; 
+  height: 50px !important;
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  display: none;
 }
