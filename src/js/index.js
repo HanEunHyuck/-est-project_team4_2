@@ -2,11 +2,11 @@ import { dropdown } from "./dropdown.js";
 import { clearInput, validation } from "./input.js";
 import { ratingSwiper } from "./ratesSwiper.js";
 import { latestSwiper } from "./latestSwiper.js";
-import { typeSwiper } from "./typeSwiper.js";
+import { initializeSwiper } from "./typeSwiper.js";
 import { loadMainSwiper } from "./mainSwiper.js";
 import { loadSeries } from "./typeFilter.js";
 import { scrollToTop } from "./scroll.js";
-import { SearchResult } from "./search.js";
+// import { SearchResult } from "./search.js";
 
 // 검색 필터
 // 년도 선택
@@ -24,7 +24,7 @@ validation();
 loadMainSwiper(); // 메인 스와이퍼
 ratingSwiper(); // 평점순 스와이퍼
 latestSwiper(); // 최신개봉순 스와이퍼
-typeSwiper(); // 타입별 스와이퍼
+initializeSwiper(); // 타입별 스와이퍼
 loadSeries(); // 시리즈
 
 // 스크롤 탑
