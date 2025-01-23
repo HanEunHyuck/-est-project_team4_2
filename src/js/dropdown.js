@@ -50,8 +50,19 @@ export function dropdown(dropdownName, options) {
       optionsList.style.height = "0px";
       optionsList.classList.add("hidden");
       dropdown.classList.remove("active");
-      dropdown.querySelector('.button-dropdown').focus();
+      dropdown.querySelector(".button-dropdown").focus();
       console.log(option);
+
+      let additionalInput;
+      if (dropdownName === "dropdown1" && option === "직접 입력") {
+        additionalInput = dropdown.nextElementSibling;
+        additionalInput.classList.remove("hidden");
+        additionalInput.querySelector("input").value = "";
+        additionalInput.querySelector("input").focus();
+      } else if (dropdownName === "dropdown1") {
+        additionalInput = dropdown.nextElementSibling;
+        additionalInput.classList.add("hidden");
+      }
     });
 
     optionItem.appendChild(optionButton);

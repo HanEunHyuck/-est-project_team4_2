@@ -1102,6 +1102,10 @@ html {
   margin-right: 18px;
 }
 
+.mr-6{
+  margin-right: 1.5rem;
+}
+
 .mt-10{
   margin-top: 2.5rem;
 }
