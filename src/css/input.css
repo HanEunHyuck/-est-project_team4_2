@@ -13,7 +13,7 @@
 @layer components {
   /* 드롭다운 */
   [class^="dropdown"] {
-    @apply relative inline-block;
+    @apply relative z-10 inline-block;
   }
 
   /* 드롭다운 버튼 */
@@ -52,6 +52,10 @@
     @apply flex-1 text-2xl;
   }
 
+  .section-search [class^="dropdown"] {
+    @apply mr-6;
+  }
+
   /* 더보기 버튼 */
   .button-more {
     @apply flex text-white;
@@ -81,7 +85,7 @@
     @apply leading-tight text-white text-40;
   }
   .title3 {
-    @apply text-4xl text-white; 
+    @apply text-4xl text-white;
   }
   .title4 {
     @apply text-2xl text-white;
@@ -130,5 +134,13 @@
 
   .icon-clear {
     @apply block w-6 aspect-square bg-clear;
+  }
+
+  /* 화면 가운데 정렬 컨텐츠 container */
+  .container-center-content {
+    @apply flex items-center justify-center min-h-screen p-5;
+  }
+  .spinner {
+    @apply w-20 h-20 border-8 rounded-full border-login-border animate-spin border-t-white;
   }
 }

@@ -598,6 +598,7 @@ html {
 
 [class^="dropdown"]{
   position: relative;
+  z-index: 10;
   display: inline-block;
 }
 
@@ -694,6 +695,10 @@ html {
   flex: 1 1 0%;
   font-size: 1.5rem;
   line-height: 2rem;
+}
+
+.section-search [class^="dropdown"]{
+  margin-right: 1.5rem;
 }
 
 /* 더보기 버튼 */
@@ -847,6 +852,36 @@ html {
   aspect-ratio: 1 / 1;
   width: 1.5rem;
   background-image: url('./../images/clear.svg');
+}
+
+/* 화면 가운데 정렬 컨텐츠 container */
+
+.container-center-content{
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+}
+
+.spinner{
+  height: 5rem;
+  width: 5rem;
+}
+
+@keyframes spin{
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+.spinner{
+  animation: spin 1s linear infinite;
+  border-radius: 9999px;
+  border-width: 8px;
+  border-color: rgb(77 75 75 / var(--tw-border-opacity, 1));
+  --tw-border-opacity: 1;
+  border-top-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
 }
 
 .sr-only{
@@ -1067,10 +1102,6 @@ html {
   margin-right: 18px;
 }
 
-.mr-6{
-  margin-right: 1.5rem;
-}
-
 .mt-10{
   margin-top: 2.5rem;
 }
@@ -1232,6 +1263,10 @@ html {
 
 .w-full{
   width: 100%;
+}
+
+.max-w-3xl{
+  max-width: 48rem;
 }
 
 .max-w-7xl{
@@ -2589,6 +2624,11 @@ html {
 .text-blue-500{
   --tw-text-opacity: 1;
   color: rgb(59 130 246 / var(--tw-text-opacity, 1));
+}
+
+.text-gray-300{
+  --tw-text-opacity: 1;
+  color: rgb(209 213 219 / var(--tw-text-opacity, 1));
 }
 
 .text-gray-400{

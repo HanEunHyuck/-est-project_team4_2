@@ -36,18 +36,18 @@
         (3) 해야하는 것1: 직접입력 선택하면 input 박스 드러나게
         (4) 해야하는 것2: selectbox 선택 적용되게-->
       <div class="dropdown1">
-        <button type="button" class="mr-6 button-dropdown round-border">
+        <button type="button" class="button-dropdown round-border">
           <span class="value"></span>
           <i class="icon-arrow-down"></i>
         </button>
-        <ul class="options-list"></ul>
+        <ul class="hidden options-list"></ul>
       </div>
       <div class="dropdown2">
-        <button type="button" class="mr-6 button-dropdown round-border">
+        <button type="button" class="button-dropdown round-border">
           <span class="value"></span>
           <i class="icon-arrow-down"></i>
         </button>
-        <ul class="options-list"></ul>
+        <ul class="hidden options-list"></ul>
       </div>
       <div class="input-wrap search">
         <label for="title" class="hidden">제목입력</label>
@@ -135,12 +135,6 @@
       </div>
       <!-- 이미지를 클릭하면 movie / series / episode 모음으로 넘어가게 됨 -->
     </section>
-    <section class="mb-26.5 objec-right mx-12 flex">
-      <img src="./src/images/main_bg_logo2.png" class="ml-auto" />
-      <button class="fixed z-10 w-20 top-button bottom-5 right-5" type="button">
-        <img src="./src/images/btn_top.svg" alt="scroll to top" />
-      </button>
-    </section>
     <!-- 푸터 -->
     <footer class="flex-col justify-center mx-12 text-white">
       <div class="flex border-t-0.5 border-white mb-9 pt-9">
@@ -176,5 +170,11 @@
         </div>
       </div>
     </footer>
+    <section class="mb-26.5 objec-right mx-12 flex">
+      <img src="./src/images/main_bg_logo2.png" class="ml-auto" />
+      <button class="fixed z-10 w-20 top-button bottom-5 right-5" type="button">
+        <img src="./src/images/btn_top.svg" alt="scroll to top" />
+      </button>
+    </section>
   </body>
 </html>

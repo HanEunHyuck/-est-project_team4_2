@@ -7,6 +7,7 @@ import { loadMainSwiper } from "./mainSwiper.js";
 import { loadSeries } from "./typeFilter.js";
 import { scrollToTop } from "./scroll.js";
 // import { SearchResult } from "./search.js";
+import { movieDetail } from "./movieDetail.js";
 
 // 검색 필터
 // 년도 선택
@@ -26,6 +27,8 @@ ratingSwiper(); // 평점순 스와이퍼
 latestSwiper(); // 최신개봉순 스와이퍼
 initializeSwiper(); // 타입별 스와이퍼
 loadSeries(); // 시리즈
+
+movieDetail();
 
 // 스크롤 탑
 const topButton = document.querySelector(".top-button");

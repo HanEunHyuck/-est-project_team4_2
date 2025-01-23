@@ -17,9 +17,11 @@ export function dropdown(dropdownName, options) {
   // 드롭다운 버튼 클릭 시
   dropdownButton.addEventListener("click", () => {
     if (dropdown.classList.contains("active")) {
+      optionsList.classList.add("hidden");
       optionsList.style.height = "0px";
       dropdown.classList.remove("active");
     } else {
+      optionsList.classList.remove("hidden");
       optionsList.style.height = options.length * 62 + 8 + "px";
       dropdown.classList.add("active");
     }
@@ -46,7 +48,9 @@ export function dropdown(dropdownName, options) {
       }
       optionItem.classList.add("selected");
       optionsList.style.height = "0px";
+      optionsList.classList.add("hidden");
       dropdown.classList.remove("active");
+      dropdown.querySelector('.button-dropdown').focus();
       console.log(option);
     });
 
@@ -57,6 +61,7 @@ export function dropdown(dropdownName, options) {
   // 외부 클릭 감지
   document.addEventListener("click", (event) => {
     if (!dropdown.contains(event.target)) {
+      optionsList.classList.add("hidden");
       dropdown.classList.remove("active");
       optionsList.style.height = "0px";
     }
