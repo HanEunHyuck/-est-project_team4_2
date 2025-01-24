@@ -54,7 +54,7 @@ export function dropdown(dropdownName, options) {
       console.log(option);
 
       let additionalInput;
-      if (dropdownName === "dropdown1" && option === "직접 입력") {
+      if (dropdownName === "dropdown1" && option === options[options.length - 1]) {
         additionalInput = dropdown.nextElementSibling;
         additionalInput.classList.remove("hidden");
         additionalInput.querySelector("input").value = "";

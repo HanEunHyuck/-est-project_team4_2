@@ -22,7 +22,7 @@ export async function searchResult() {
         
         const queryParams = getQueryParams(); // 쿼리스트링 값 가져오기
         const filteredMovies = filterMovies(data, queryParams); // 필터링된 데이터 가져오기
-        console.log(filteredMovies);
+        // console.log(filteredMovies);
         
         if (filteredMovies.length === 0) {
             displayNoResults();

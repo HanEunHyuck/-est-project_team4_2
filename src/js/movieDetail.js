@@ -1,7 +1,7 @@
-export async function movieDetail() {
+export async function movieDetail(movieId) {
   try {
     // JSON 데이터 가져오기
-    const res = await fetch("https://www.omdbapi.com/?i=tt1228705&apikey=8e5fae38");
+    const res = await fetch(`https://www.omdbapi.com/?i=${movieId}&apikey=8e5fae38`);
 
     // 가져오지 못한 경우 에러
     if (!res.ok) {

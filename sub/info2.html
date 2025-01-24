@@ -9,7 +9,17 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script type="module" src="./../src/js/index.js"></script>
   </head>
-  <body class="min-h-screen p-6 text-white bg-bg">
+  <body class="min-h-screen p-6 text-white pt-[120px] bg-bg">
+    <header class="bg-opacity-0 header">
+      <h1 class="logo">
+        <a href="./../index.html">
+          <img src="./../src/images/logo.svg" alt="CINESCOPE" />
+        </a>
+      </h1>
+      <!-- <div class="login-status">
+        <a href="./sub/login.html" class="text-xl tracking-wider text-white">Login</a>
+      </div> -->
+    </header>
     <section class="info">
       <div class="relative type-swiper mb-26.5 container mx-auto max-w-7xl">
         <div class="flex items-center gap-4 mb-4">
@@ -43,5 +53,8 @@
         </section>
       </div>
     </section>
+    <div class="loading fixed top-0 left-0 w-full h-full container-center-content bg-bg z-[1000]">
+      <div class="spinner"></div>
+    </div>
   </body>
 </html>

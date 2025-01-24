@@ -31,7 +31,7 @@ export async function loadSeries() {
 
       const seriesEl = document.createElement("div");
       seriesEl.classList.add("series-item",
-        "flex", "justify-center", "relative", "w-full", "h-full");
+        "flex", "justify-center", "relative", "w-full", "h-full","cursor-pointer");
       seriesEl.innerHTML = `
           <img src="${posterSrc}" alt="${movie.Title}" 
             class="w-full h-full object-center object-cover

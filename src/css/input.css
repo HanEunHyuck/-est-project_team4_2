@@ -11,6 +11,11 @@
 }
 
 @layer components {
+  /* header */
+  .header {
+    @apply fixed top-0 left-0 z-50 flex items-center justify-between w-full px-4 py-6 transition bg-bg;
+  }
+
   /* 드롭다운 */
   [class^="dropdown"] {
     @apply relative z-10 inline-block;
@@ -143,7 +148,12 @@
   .spinner {
     @apply w-20 h-20 border-8 rounded-full border-login-border animate-spin border-t-white;
   }
-  
+
+  /* 인풋 number 화살표 없애기 */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    @apply m-0 appearance-none;
+  }
 }
 /* 스와이퍼 옵션 */
 .swiper-pagination-bullet {
@@ -153,22 +163,21 @@
   @apply bg-primary !important;
 }
 .swiper-button-next {
-  @apply bg-center bg-no-repeat bg-contain bg-arrow-next after:hidden; 
-    width: 50px !important;
-    height: 50px !important;
+  @apply bg-center bg-no-repeat bg-contain bg-arrow-next after:hidden;
+  width: 50px !important;
+  height: 50px !important;
 }
 .swiper-button-prev {
   @apply bg-center bg-no-repeat bg-contain bg-arrow-prev after:hidden;
-    width: 50px !important;
-    height: 50px !important;
+  width: 50px !important;
+  height: 50px !important;
 }
 
 .section-rates .swiper-button-prev,
 .section-latest .swiper-button-prev {
-  @apply absolute left-negative-56;
+  @apply absolute left-4;
 }
 .section-rates .swiper-button-next,
 .section-latest .swiper-button-next {
-  @apply absolute right-negative-56;
+  @apply absolute right-4;
 }
-
