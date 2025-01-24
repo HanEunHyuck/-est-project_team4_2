@@ -153,18 +153,22 @@
   @apply bg-primary !important;
 }
 .swiper-button-next {
-  background: url(./../images/swiper_arrow_next.svg) no-repeat center;
-  background-size: contain;
-  width: 50px !important; 
-  height: 50px !important;
+  @apply bg-center bg-no-repeat bg-contain bg-arrow-next after:hidden; 
+    width: 50px !important;
+    height: 50px !important;
 }
 .swiper-button-prev {
-  background: url(./../images/swiper_arrow_prev.svg) no-repeat center;
-  background-size: contain;
-  width: 50px !important; 
-  height: 50px !important;
+  @apply bg-center bg-no-repeat bg-contain bg-arrow-prev after:hidden;
+    width: 50px !important;
+    height: 50px !important;
 }
-.swiper-button-next::after,
-.swiper-button-prev::after {
-  display: none;
+
+.section-rates .swiper-button-prev,
+.section-latest .swiper-button-prev {
+  @apply absolute left-negative-56;
 }
+.section-rates .swiper-button-next,
+.section-latest .swiper-button-next {
+  @apply absolute right-negative-56;
+}
+
