@@ -24,10 +24,17 @@
       <div class="relative type-swiper mb-26.5 container mx-auto max-w-7xl">
         <div class="flex items-center gap-4 mb-4">
           <h1 class="text-2xl font-semibold movie-title"></h1>
-          <button class="text-sm text-gray-400 hover:text-white" onclick="shareMovie()">share</button>
+          <button
+            class="text-sm text-gray-400 hover:text-white"
+            onclick="shareMovie()"
+          >
+            share
+          </button>
         </div>
 
-        <div class="flex items-center gap-2 mb-8 text-sm text-gray-400 movie-sub-title"></div>
+        <div
+          class="flex items-center gap-2 mb-8 text-sm text-gray-400 movie-sub-title"
+        ></div>
 
         <div class="grid gap-8 mb-8 md:grid-cols-2 movie-detail"></div>
 
@@ -53,8 +60,64 @@
         </section>
       </div>
     </section>
-    <div class="loading fixed top-0 left-0 w-full h-full container-center-content bg-bg z-[1000]">
+    <div
+      class="loading fixed top-0 left-0 w-full h-full container-center-content bg-bg z-[1000]"
+    >
       <div class="spinner"></div>
     </div>
+    <!-- 푸터 -->
+    <footer class="flex-col justify-center mx-12 text-white">
+      <div class="flex border-t-0.5 border-white mb-9 pt-9">
+        <h2 class="flex-1 text-3xl font-bold">estsoft</h2>
+        <div class="flex-1 text-lg text-right">
+          <a href="#"><span>privacy policy</span></a>
+          <a href="#"><span class="ml-29">terms of use</span></a>
+          <a href="#"><span class="ml-29">announcement</span></a>
+          <a href="#"><span class="ml-29">sitemap</span></a>
+        </div>
+      </div>
+      <div class="mb-20 text-lg">
+        <!-- 각각 앞에 svg 아이콘 넣는 법... -->
+        <a href="https://maps.app.goo.gl/Y5iuvyFKy7mHWRaQ6" target="_blank">
+          <div class="flex items-center mb-3.5">
+            <img
+              src="./../src/images/map_pin.svg"
+              alt="Address Introduction"
+              class="mr-4.5"
+            />
+            <span>1464-30 Seocho-dong, Seocho-gu, Seoul (06711)</span>
+          </div>
+        </a>
+        <a href="http://www.estsoft.co.kr/" target="_blank">
+          <div class="flex items-center">
+            <img
+              src="./../src/images/globe.svg"
+              alt="homepage link"
+              class="mr-4.5"
+            />
+            <span>http://www.estsoft.co.kr/</span>
+          </div>
+        </a>
+      </div>
+      <div class="flex mb-20">
+        <span class="flex-1">
+          copyright ⓒ 2025. estsoft 4team. All right reserved.
+        </span>
+        <div class="flex-1 text-right">
+          <span>TEL : <a href="tel:02-123-4566">02 - 123 - 4566</a></span>
+          <span class="ml-32"
+            >FAX : <a href="tel:02-123-4567">02 - 123 - 4567</a></span
+          >
+          <span class="ml-32"
+            >E-MAIL :
+            <a href="mailto:estsoft@gmail.com">estsoft@gmail.com</a></span
+          >
+        </div>
+      </div>
+    </footer>
+
+    <button class="fixed z-10 w-20 top-button bottom-5 right-5" type="button">
+      <img src="./../src/images/btn_top.svg" alt="scroll to top" />
+    </button>
   </body>
 </html>
