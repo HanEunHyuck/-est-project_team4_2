@@ -4,7 +4,9 @@ export function renderSwiperOptions({
   spaceBetween = 0, // 슬라이드 간격 없음
   autoplayDelay = 5000, // 슬라이드 자동 재생, 5초
   disableAutoplayOnInteraction = false, // 사용자가 클릭하면 재생 멈춤
-  usePagination = false, // 메인 슬라이드에서만 사용 
+  usePagination = true, // 메인 슬라이드에서만 사용 
+  nextEl= '.swiper-button-next', // next 버튼
+  prevEl= '.swiper-button-prev', // prev 버튼
   // breakpoints = { }, // 반응형 
 }) 
 {
@@ -13,8 +15,8 @@ export function renderSwiperOptions({
     slidesPerView,
     spaceBetween,
     navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+        nextEl: nextEl,
+        prevEl: prevEl,
     },
 
     autoplay: {
