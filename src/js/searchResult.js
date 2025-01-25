@@ -1,86 +1,72 @@
-let movieData = [];
+// OMDb API 설정
+const apiKey = "8e5fae38"; 
+const baseUrl = "https://www.omdbapi.com/";
 
-function getQueryParams() {
-    const params = new URLSearchParams(window.location.search);
-    const title = params.get('title') || '';
-    const year = params.get('year') || '';
-    const content = params.get('content') || '';
-    
-    return { title, year, content };
-}
-
-export async function searchResult() {
+// API 요청 함수
+export async function handleSearch(query, searchResults) {
     try {
-        const res = await fetch("./../src/data/data.json");
-        
-        if (!res.ok) {
-            throw new Error(res.status);
-        }
-        
-        const data = await res.json();
-        movieData = data; // 전체 데이터를 전역 변수에 저장
-        
-        const queryParams = getQueryParams(); // 쿼리스트링 값 가져오기
-        const filteredMovies = filterMovies(data, queryParams); // 필터링된 데이터 가져오기
-        // console.log(filteredMovies);
-        
-        if (filteredMovies.length === 0) {
-            displayNoResults();
+        // encodeURIComponent() : 특수문자를 포함한 URL 인코딩 함수
+        // 사용자의 검색어를 받아서 인코딩 > API에서 검색된 결과를 받아옴
+        const response = await fetch(
+        `${baseUrl}?apikey=${apiKey}&s=${encodeURIComponent(query)}`
+        );
+        const data = await response.json();
+
+        if (data.Response === "True" && data.Search) {
+            // 검색 결과가 있으면
+            displayResults(data.Search, searchResults);
+            
         } else {
-            sortMoviesByPopularity(filteredMovies); // 정렬
-            displayMovies(filteredMovies); // 화면에 표시
+            // 검색 결과가 없으면
+            searchResults.innerHTML = "<p>검색 결과가 없습니다.</p>";
         }
-    } catch (err) {
-        console.error('데이터 로드 실패:', err);
+    } catch (error) {
+        console.error("API 요청 중 오류 발생:", error);
+        searchResults.innerHTML =
+        "<p >오류가 발생했습니다. 다시 시도해주세요.</p>";
     }
-}
+};
 
-// 쿼리스트링 값으로 데이터 필터링
-function filterMovies(data, { title, year, content }) {
-    return data.filter((movie) => {
-        // 각 조건이 존재할 경우 비교 수행
-        const matchesTitle = title ? movie.title.includes(title) : true;
-        const matchesYear = year ? movie.year === Number(year) : true;
-    
-        // 모든 조건이 만족될 경우 true 반환
-        return matchesTitle && matchesYear;
-      });
-  }
+export let movieApiId = null;
+// 검색 결과 표시 함수
+async function displayResults(results, searchResults) {
+    searchResults.innerHTML = ""; // 기존 결과 초기화
 
+    results.slice(0, 4).forEach((movie) => {
+        // 최대 4개만 표시하는 상태
+        // console.log(movie.imdbID);
+        const movieElement = document.createElement("div");
+        movieElement.classList.add("search-results", "cursor-pointer", "movie");
+        movieElement.addEventListener("click", () => {
+            movieApiId = movie.imdbID;
+            window.location.href="./info2.html";
+        });
+        movieElement.innerHTML = `
+        <div class="relative mb-5">
+            <img src="${
+            movie.Poster !== "N/A"
+                ? movie.Poster
+                : "./../images/placeholder_img.png"
+            }" 
+                alt="" class="w-full aspect-[3/4] object-cover 
+                    transition-transform duration-300 hover:scale-105">
+        </div>
+        <h3 class="text-2xl text-white mb-4 font-semibold truncate mr-2">${movie.Title}
+        <span class="text-xl text-gray62">(${movie.Year})</span></h3>
 
-// 영화 목록 표시
-function displayMovies(movies) {
-    const movieList = document.getElementById('movie-list');
-    movieList.innerHTML = ''; // 기존 목록 초기화
-
-    movies.forEach(movie => {
-        const listItem = document.createElement('li');
-        listItem.innerHTML = `
-            <img class="movie-poster" src="${movie.Poster !== 'N/A' ? movie.Poster : 'https://via.placeholder.com/100x150?text=No+Image'}" alt="${movie.Title} 포스터">
-            <div>
-                <h3>${movie.Title}</h3>
-                <p><strong>년도:</strong> ${movie.Year}</p>
-                <p><strong>타입:</strong> ${movie.Type}</p>
-                <p><strong>평점:</strong> ${movie.Ratings[0] ? movie.Ratings[0].Value : 'N/A'}</p>
-                <a href="https://www.imdb.com/title/${movie.imdbID}" target="_blank">IMDB 링크</a>
-            </div>
         `;
-        movieList.appendChild(listItem);
+        searchResults.appendChild(movieElement);
     });
 }
 
-// 결과 없음 메시지 표시
-function displayNoResults() {
-    const movieList = document.getElementById('movie-list');
-    movieList.innerHTML = '<p>검색 결과가 없습니다.</p>';
-}
-const queryParams = {
-    title: "Transformers",
-    year: "2023",
-    content: "movie"
-};
-// 페이지 로드 시 실행
-window.onload = function () {
-    const filteredMovies = filterMovies(movieData, queryParams);
-    searchResult(); // 데이터를 불러오고 필터링하여 표시
-};
+
+// 검색 결과 수 출력
+// export function resultCount(count) {
+//     //result-count에 출력함
+//     const resultCountEl = document.querySelector(".result-count"); 
+//         if (resultCountEl) {
+//         resultCountEl.textContent = `${count}`;
+//     } else {
+//         console.error(error);
+//     }
+// }

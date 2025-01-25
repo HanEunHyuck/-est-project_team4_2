@@ -6,9 +6,11 @@
     <title>CINESCOPE</title>
     <link rel="stylesheet" href="./src/css/output.css" />
     <!-- Link Swiper's CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <!-- Swiper JS 없어도 된다고 하셔서 나중에 다시보기 -->
-    <!-- └ 이 방법을 하려면 npm install swiper을 해야 하나...? -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script type="module" src="./src/js/index.js"></script>
   </head>
@@ -45,11 +47,6 @@
     </main>
     <section class="mb-24.5 section-search flex items-center justify-center">
       <!-- 검색 섹션 -->
-      <!-- 수정 필요
-        (1) 드롭다운 z-index: 999; 
-        (2) selectbox랑 input의 height 동일하게 
-        (3) 해야하는 것1: 직접입력 선택하면 input 박스 드러나게
-        (4) 해야하는 것2: selectbox 선택 적용되게-->
       <div class="dropdown1">
         <button type="button" class="button-dropdown round-border">
           <span class="value"></span>
@@ -59,7 +56,12 @@
       </div>
       <div class="hidden mr-6 input-wrap search">
         <label for="year" class="hidden">직접입력</label>
-        <input type="number" id="year" class="round-border w-75" placeholder="년도 입력 ex) 2016" />
+        <input
+          type="number"
+          id="year"
+          class="round-border w-75"
+          placeholder="년도 입력 ex) 2016"
+        />
         <button type="button" class="ml-auto">
           <span class="sr-only">검색</span>
           <i class="icon-search"></i>
@@ -74,13 +76,32 @@
       </div> -->
       <div class="input-wrap search">
         <label for="title" class="hidden">제목입력</label>
-        <input type="text" id="title" class="round-border w-140" placeholder="영화제목 입력" />
+        <input
+          type="text"
+          id="title"
+          class="round-border w-140"
+          placeholder="영화제목 입력"
+        />
         <button type="button" class="ml-auto search-btn">
           <span class="sr-only">검색</span>
           <i class="icon-search"></i>
         </button>
       </div>
     </section>
+    <!-- 테스트 test 테스트 test 추후 삭제할 것!! -->
+    <!-- <section class="test-section">
+      <input
+        type="text"
+        id="test1"
+        class="round-border w-140"
+        placeholder="영화제목 입력"
+      />
+      <button type="button" class="search-btn" id="test-btn">
+        <span class="sr-only">검색</span>
+        <i class="icon-search"></i>
+      </button>
+      <div id="output" class="text-white w-90 h-90">내용</div>
+    </section> -->
     <!-- 평점순 스와이퍼 -->
     <section class="relative section-rates">
       <div class="max-w-6xl px-5 mx-auto mb-20 overflow-visible">
@@ -138,7 +159,9 @@
           <i class="icon-arrow-more"></i>
         </button> -->
       </div>
-      <div class="grid items-center justify-center grid-cols-2 gap-5 overflow-hidden series-wrapper h-150">
+      <div
+        class="grid items-center justify-center grid-cols-2 gap-5 overflow-hidden series-wrapper h-150"
+      >
         <!-- 시리즈 데이터 2개 -->
         <!-- 대부분의 포스터가 세로가 길어서 사이즈 지정을 어떻게 해야 
          보기 좋은 비율로 나올지 고민해 봐야할 것 같음.........
@@ -149,14 +172,32 @@
     <section class="section-type mb-26.5 max-w-6xl mx-auto px-5">
       <h2 class="mb-5 font-bold title3">Type</h2>
       <div class="grid items-center grid-cols-3 gap-5 justify-items-center">
-        <div class="w-full h-auto transition-transform duration-300 hover:scale-105">
-          <img src="./src/images/frame_movie.png" alt="watch more movies" class="object-cover w-full h-full" />
+        <div
+          class="w-full h-auto transition-transform duration-300 hover:scale-105"
+        >
+          <img
+            src="./src/images/frame_movie.png"
+            alt="watch more movies"
+            class="object-cover w-full h-full"
+          />
         </div>
-        <div class="w-full h-auto transition-transform duration-300 hover:scale-105">
-          <img src="./src/images/frame_series.png" alt="watch more series" class="object-cover w-full h-full" />
+        <div
+          class="w-full h-auto transition-transform duration-300 hover:scale-105"
+        >
+          <img
+            src="./src/images/frame_series.png"
+            alt="watch more series"
+            class="object-cover w-full h-full"
+          />
         </div>
-        <div class="w-full h-auto transition-transform duration-300 hover:scale-105">
-          <img src="./src/images/frame_episode.png" alt="watch more episodes" class="object-cover w-full h-full" />
+        <div
+          class="w-full h-auto transition-transform duration-300 hover:scale-105"
+        >
+          <img
+            src="./src/images/frame_episode.png"
+            alt="watch more episodes"
+            class="object-cover w-full h-full"
+          />
         </div>
       </div>
       <!-- 이미지를 클릭하면 movie / series / episode 모음으로 넘어가게 됨 -->
@@ -170,7 +211,7 @@
         <h2 class="flex-1 text-3xl font-bold">estsoft</h2>
         <div class="flex-1 text-lg text-right">
           <a href="#"><span>privacy policy</span></a>
-          <a href="#"><span class="ml-29">Terms of Use</span></a>
+          <a href="#"><span class="ml-29">terms of use</span></a>
           <a href="#"><span class="ml-29">announcement</span></a>
           <a href="#"><span class="ml-29">sitemap</span></a>
         </div>
@@ -179,23 +220,38 @@
         <!-- 각각 앞에 svg 아이콘 넣는 법... -->
         <a href="https://maps.app.goo.gl/Y5iuvyFKy7mHWRaQ6" target="_blank">
           <div class="flex items-center mb-3.5">
-            <img src="./src/images/map_pin.svg" alt="Address Introduction" class="mr-4.5" />
+            <img
+              src="./src/images/map_pin.svg"
+              alt="Address Introduction"
+              class="mr-4.5"
+            />
             <span>1464-30 Seocho-dong, Seocho-gu, Seoul (06711)</span>
           </div>
         </a>
         <a href="http://www.estsoft.co.kr/" target="_blank">
           <div class="flex items-center">
-            <img src="./src/images/globe.svg" alt="homepage link" class="mr-4.5" />
+            <img
+              src="./src/images/globe.svg"
+              alt="homepage link"
+              class="mr-4.5"
+            />
             <span>http://www.estsoft.co.kr/</span>
           </div>
         </a>
       </div>
       <div class="flex mb-20">
-        <span class="flex-1"> copyright ⓒ 2025. eassoft 4team. All right reserved </span>
+        <span class="flex-1">
+          copyright ⓒ 2025. estsoft 4team. All right reserved.
+        </span>
         <div class="flex-1 text-right">
           <span>TEL : <a href="tel:02-123-4566">02 - 123 - 4566</a></span>
-          <span class="ml-32">FAX : <a href="tel:02-123-4567">02 - 123 - 4567</a></span>
-          <span class="ml-32">E-MAIL : <a href="mailto:estsoft@gmail.com">estsoft@gmail.com</a></span>
+          <span class="ml-32"
+            >FAX : <a href="tel:02-123-4567">02 - 123 - 4567</a></span
+          >
+          <span class="ml-32"
+            >E-MAIL :
+            <a href="mailto:estsoft@gmail.com">estsoft@gmail.com</a></span
+          >
         </div>
       </div>
     </footer>
@@ -204,7 +260,9 @@
       <img src="./src/images/btn_top.svg" alt="scroll to top" />
     </button>
 
-    <div class="loading fixed top-0 left-0 w-full h-full container-center-content bg-bg z-[1000]">
+    <div
+      class="loading fixed top-0 left-0 w-full h-full container-center-content bg-bg z-[1000]"
+    >
       <div class="spinner"></div>
     </div>
   </body>
