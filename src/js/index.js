@@ -129,7 +129,7 @@ async function getResult() {
 
   // 메인 페이지에서 결과페이지 이동 시
   if (searchButton.parentElement.classList.contains("main-input")) {
-    window.location.href = "./searchResult.html";
+    window.location.href = "./sub/searchResult.html";
     setTimeout(function () {
       searchInput.value = "";
     });

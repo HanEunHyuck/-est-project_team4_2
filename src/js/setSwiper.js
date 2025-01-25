@@ -108,7 +108,7 @@ async function renderRatesSwiper(limitedData, swiperWrapper, sort) {
     slide.classList.add("swiper-slide", "cursor-pointer", "movie");
     slide.addEventListener("click", () => {
       movieId = movie.imdbID;
-      window.location.href="./info.html";
+      window.location.href="./sub/info.html";
     });
     slide.innerHTML += `
         <div class="relative mb-5">

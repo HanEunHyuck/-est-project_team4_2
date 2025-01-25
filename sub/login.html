@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="./../src/css/output.css" />
+    <script type="module" src="./../src/js/index.js"></script>
+  </head>
+  <body class="bg-bg">
+    <div class="container-center-content">
+      <section>
+        <h2 class="text-center title3 mb-22.5 tracking-wider">WELCOME!<span class="block mt-2 text-5xl tracking-wider">CINESCOPE</span></h2>
+        <form>
+          <fieldset hidden>로그인</fieldset>
+          <div>
+            <div class="block input-wrap">
+              <label for="userId" class="hidden">userId</label>
+              <input type="text" id="userId" class="input-underline w-100" placeholder="USER ID" />
+              <button type="button" class="hidden button-clear">
+                <span class="sr-only">입력창 초기화</span>
+                <i class="icon-clear"></i>
+              </button>
+            </div>
+            <p class="error-message"></p>
+          </div>
+
+          <div class="mt-10">
+            <div class="input-wrap">
+              <label for="password" class="hidden">비밀번호 입력</label>
+              <input type="password" id="password" class="input-underline w-100" placeholder="USER PW" />
+              <button type="button" class="hidden button-clear">
+                <span class="sr-only">입력창 초기화</span>
+                <i class="icon-clear"></i>
+              </button>
+            </div>
+            <p class="error-message"></p>
+          </div>
+
+          <a href="./sub/main.html" class="block w-full py-4 mt-12 text-2xl font-bold text-center bg-white round-border active:opacity-80 login-btn">Login</a>
+        </form>
+      </section>
+    </div>
+  </body>
+</html>
