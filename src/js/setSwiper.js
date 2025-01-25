@@ -1,6 +1,5 @@
 import { renderSwiperOptions } from "./swiperOption.js";
 import { releasedYear } from "./movieElement.js";
-import { movieDetail } from "./movieDetail.js";
 
 // 영화 스와이퍼
 export async function setSwiper(sort) {
@@ -109,7 +108,7 @@ async function renderRatesSwiper(limitedData, swiperWrapper, sort) {
     slide.classList.add("swiper-slide", "cursor-pointer", "movie");
     slide.addEventListener("click", () => {
       movieId = movie.imdbID;
-      window.location.href="./sub/info2.html";
+      window.location.href="./sub/info.html";
     });
     slide.innerHTML += `
         <div class="relative mb-5">

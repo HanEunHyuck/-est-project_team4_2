@@ -7,98 +7,82 @@
     <link rel="stylesheet" href="./../src/css/output.css" />
     <script type="module" src="./../src/js/index.js"></script>
   </head>
-  <body class="min-h-screen p-6 text-white bg-bg">
+  <body class="p-6 pt-[120px] text-white bg-bg">
+    <header class="bg-opacity-0 header">
+      <h1 class="logo">
+        <a href="./../index.html">
+          <img src="./../src/images/logo.svg" alt="CINESCOPE" />
+        </a>
+      </h1>
+      <!-- <div class="login-status">
+        <a href="./sub/login.html" class="text-xl tracking-wider text-white">Login</a>
+      </div> -->
+    </header>
     <section class="info">
-      <div class="container max-w-full max-auto">
-        <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+      <div class="container max-w-6xl mx-auto">
+        <div class="flex justify-around">
           <!-- movie-info -->
-          <div class="movie-info-container">
+          <div class="movie-info-container max-w-[40%]">
             <div class="flex items-center mb-4">
               <!-- movie-title -->
               <h1 class="mr-4 text-2xl font-semibold movie-title"></h1>
               <!-- share button -->
-              <button
-                id="shareButton"
-                class="flex items-center ml-2 text-gray-400 transition-colors text-m hover:text-white"
-              >
+              <button id="shareButton" class="flex items-center ml-2 text-gray-400 transition-colors text-m hover:text-white">
                 <span class="mr-2">Share</span>
                 <i data-lucide="share-2" class="w-4 h-4"></i>
               </button>
             </div>
             <!-- movie-sub-title -->
-            <div
-              class="flex items-center gap-2 mb-4 text-gray-400 text-m movie-sub-title"
-            ></div>
+            <div class="flex items-center gap-2 mb-4 text-gray-400 text-m movie-sub-title"></div>
             <!-- movie-plot -->
             <div class="mt-5 mb-8 movie-plot"></div>
           </div>
 
           <!-- movie-poster -->
-          <div class="relative w-[600px] h-[400px] overflow-hidden mb-8">
-            <img
-              src="/placeholder.svg"
-              alt="Movie Poster"
-              class="max-w-full max-h-full movie-poster"
-            />
+          <div class="mb-8 overflow-hidden max-w-[40%]">
+            <img src="./../src/images/placeholder_img.png" alt="Movie Poster" class="movie-poster" />
           </div>
         </div>
       </div>
 
       <!-- movie-info -->
-      <div
-        class="container max-w-full py-4 my-5 border-t border-b border-white movie-info max-auto"
-      >
-        <div class="grid grid-cols-1 gap-4"></div>
+      <div class="max-w-6xl py-4 mx-auto mt-5 border-t border-b border-white mb-60 movie-info">
+        <div class=""></div>
       </div>
     </section>
 
     <!-- 푸터 -->
-    <footer class="flex-col justify-center mx-12 text-white">
+    <footer class="flex-col justify-center text-white">
       <div class="flex border-t-0.5 border-white mb-9 pt-9">
         <h2 class="flex-1 text-3xl font-bold">estsoft</h2>
-        <div class="flex-1 text-lg text-right">
+        <div class="flex gap-10 text-lg">
           <a href="#"><span>privacy policy</span></a>
-          <a href="#"><span class="ml-29">terms of use</span></a>
-          <a href="#"><span class="ml-29">announcement</span></a>
-          <a href="#"><span class="ml-29">sitemap</span></a>
+          <a href="#"><span>terms of use</span></a>
+          <a href="#"><span>announcement</span></a>
+          <a href="#"><span>sitemap</span></a>
         </div>
       </div>
-      <div class="mb-20 text-lg">
+      <div class="text-lg mb-14">
         <!-- 각각 앞에 svg 아이콘 넣는 법... -->
         <a href="https://maps.app.goo.gl/Y5iuvyFKy7mHWRaQ6" target="_blank">
           <div class="flex items-center mb-3.5">
-            <img
-              src="./../src/images/map_pin.svg"
-              alt="Address Introduction"
-              class="mr-4.5"
-            />
+            <img src="./../src/images/map_pin.svg" alt="Address Introduction" class="mr-4.5" />
             <span>1464-30 Seocho-dong, Seocho-gu, Seoul (06711)</span>
           </div>
         </a>
         <a href="http://www.estsoft.co.kr/" target="_blank">
           <div class="flex items-center">
-            <img
-              src="./../src/images/globe.svg"
-              alt="homepage link"
-              class="mr-4.5"
-            />
+            <img src="./../src/images/globe.svg" alt="homepage link" class="mr-4.5" />
             <span>http://www.estsoft.co.kr/</span>
           </div>
         </a>
       </div>
-      <div class="flex mb-20">
-        <span class="flex-1">
-          copyright ⓒ 2025. estsoft 4team. All right reserved.
-        </span>
-        <div class="flex-1 text-right">
+      <div class="flex mb-14">
+        <span class="flex-1"> copyright ⓒ 2025. estsoft 4team. All right reserved. </span>
+        <div class="flex gap-10">
           <span>TEL : <a href="tel:02-123-4566">02 - 123 - 4566</a></span>
-          <span class="ml-32"
-            >FAX : <a href="tel:02-123-4567">02 - 123 - 4567</a></span
-          >
-          <span class="ml-32"
-            >E-MAIL :
-            <a href="mailto:estsoft@gmail.com">estsoft@gmail.com</a></span
-          >
+          <span>FAX : <a href="tel:02-123-4567">02 - 123 - 4567</a></span>
+          <span>E-MAIL : <a href="mailto:estsoft@gmail.com">estsoft@gmail.com</a></span>
         </div>
       </div>
     </footer>
@@ -106,5 +90,8 @@
     <button class="fixed z-10 w-20 top-button bottom-5 right-5" type="button">
       <img src="./../src/images/btn_top.svg" alt="scroll to top" />
     </button>
+    <div class="loading fixed top-0 left-0 w-full h-full container-center-content bg-bg z-[1000]">
+      <div class="spinner"></div>
+    </div>
   </body>
 </html>
