@@ -1000,11 +1000,6 @@ input::-webkit-outer-spin-button,
   margin-right: auto;
 }
 
-.my-26\.5{
-  margin-top: 106px;
-  margin-bottom: 106px;
-}
-
 .mb-20{
   margin-bottom: 5rem;
 }
@@ -1079,14 +1074,6 @@ input::-webkit-outer-spin-button,
 
 .mt-2{
   margin-top: 0.5rem;
-}
-
-.mb-16{
-  margin-bottom: 4rem;
-}
-
-.mr-2{
-  margin-right: 0.5rem;
 }
 
 .block{
@@ -1197,10 +1184,6 @@ input::-webkit-outer-spin-button,
 
 .grid-cols-\[auto_1fr\]{
   grid-template-columns: auto 1fr;
-}
-
-.grid-cols-4{
-  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .flex-col{
@@ -1430,6 +1413,11 @@ input::-webkit-outer-spin-button,
 
 .opacity-25{
   opacity: 0.25;
+}
+
+.blur{
+  --tw-blur: blur(8px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .filter{

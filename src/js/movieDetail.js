@@ -29,8 +29,8 @@ export async function movieDetail(movieId) {
     // movie-detail 데이터 출력
     const movieDetail = document.querySelector(".movie-detail");
 
-    // Poster 빈값이면 대체이미지 쓰기 
-    const posterSrc = data.Poster === "N/A" || !data.Poster ? "./../images/placeholder_img.png" : data.Poster;
+    // Poster 빈값이면 대체이미지 쓰기 (img.png 경로 바꿀 것)
+    const posterSrc = data.Poster === "N/A" || !data.Poster ? "img.png" : data.Poster;
     movieDetail.innerHTML = `
           <div class="leading-relaxed text-gray-400">${data.Plot}</div>
           <img src="${posterSrc}" alt="Venom movie still" class="object-cover w-full h-auto max-w-lg rounded-lg" />
@@ -50,5 +50,3 @@ export async function movieDetail(movieId) {
     console.error(err);
   }
 }
-
-
