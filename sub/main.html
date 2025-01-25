@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CINESCOPE</title>
+    <link rel="stylesheet" href="./../src/css/output.css" />
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="module" src="./../src/js/index.js"></script>
+  </head>
+  <body class="bg-bg">
+    <header class="bg-opacity-0 header">
+      <h1 class="logo">
+        <a href="./main.html">
+          <img src="./../src/images/logo.svg" alt="CINESCOPE" />
+        </a>
+      </h1>
+    </header>
+    <main>
+      <div class="relative main-swiper mb-26.5">
+        <!-- 메인 스와이퍼 -->
+        <!-- 이 구조를 만들 것 -->
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <!-- <div class="swiper-slide"">
+          영화 포스터
+          <div class="swiper-inner">
+            <h2 class="text-white swiper-title title1">영화제목</h2>
+            <p class="text-primary">평점</p>
+          </div>
+        </div> -->
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination .custom-pagination"></div>
+        </div>
+      </div>
+    </main>
+    <section class="mb-24.5 section-search flex items-center justify-center">
+      <!-- 검색 섹션 -->
+      <div class="dropdown1">
+        <button type="button" class="button-dropdown round-border">
+          <span class="value"></span>
+          <i class="icon-arrow-down"></i>
+        </button>
+        <ul class="hidden options-list"></ul>
+      </div>
+      <div class="hidden mr-6 input-wrap search">
+        <label for="year" class="hidden">Enter directly</label>
+        <input type="number" id="year" class="round-border w-75" placeholder="ex) 2016" />
+      </div>
+      <!-- <div class="dropdown2">
+        <button type="button" class="button-dropdown round-border">
+          <span class="value"></span>
+          <i class="icon-arrow-down"></i>
+        </button>
+        <ul class="hidden options-list"></ul>
+      </div> -->
+      <div class="input-wrap search main-input" id="search-form">
+        <label for="title" class="hidden">Enter title</label>
+        <input type="text" id="title" class="round-border w-140" placeholder="Enter Movie Title" />
+        <button type="button" class="ml-auto search-btn">
+          <span class="sr-only">search</span>
+          <i class="icon-search"></i>
+        </button>
+      </div>
+    </section>
+    <!-- 테스트 test 테스트 test 추후 삭제할 것!! -->
+    <!-- <section class="test-section">
+      <input
+        type="text"
+        id="test1"
+        class="round-border w-140"
+        placeholder="영화제목 입력"
+      />
+      <button type="button" class="search-btn" id="test-btn">
+        <span class="sr-only">검색</span>
+        <i class="icon-search"></i>
+      </button>
+      <div id="output" class="text-white w-90 h-90">내용</div>
+    </section> -->
+    <!-- 평점순 스와이퍼 -->
+    <section class="relative section-rates">
+      <div class="max-w-6xl px-5 mx-auto mb-20 overflow-visible">
+        <div class="flex items-center justify-between">
+          <h2 class="mb-5 font-bold title3">Rates</h2>
+          <!-- <button type="button" class="button-more">
+            <span>More</span>
+            <i class="icon-arrow-more"></i>
+          </button> -->
+        </div>
+        <div class="swiper rates-swiper">
+          <div class="swiper-wrapper">
+            <!-- 이 구조를 만들 것 -->
+            <!-- <div class="swiper-slide">
+            <div class="movie-poster">
+              <img src="포스터 이미지" alt="" />
+            </div>
+            <h3 class="text-2xl text-white">제목</h3>
+            <span class="text-xl">개봉 연도</span>
+            <span class="text-xl text-primary">평점</span>
+          </div> -->
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </section>
+    <!-- 최신개봉순 스와이퍼 -->
+    <section class="relative section-latest">
+      <div class="mb-26.5 max-w-6xl mx-auto overflow-visible px-5">
+        <div class="flex items-center justify-between">
+          <h2 class="mb-5 font-bold title3">Latest Release</h2>
+          <!-- <button type="button" class="button-more">
+            <span>More</span>
+            <i class="icon-arrow-more"></i>
+          </button> -->
+        </div>
+        <div class="swiper latest-swiper">
+          <div class="swiper-wrapper"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </section>
+    <section class="mb-26.5 mx-12">
+      <img src="./../src/images/main_bg_logo1.png" />
+    </section>
+    <section class="section-series mb-26.5 max-w-6xl mx-auto px-5">
+      <div class="flex items-center justify-between">
+        <h2 class="mb-5 font-bold title3">Series</h2>
+        <!-- <button type="button" class="button-more">
+          <span>More</span>
+          <i class="icon-arrow-more"></i>
+        </button> -->
+      </div>
+      <div class="grid items-center justify-center grid-cols-2 gap-5 overflow-hidden series-wrapper h-150">
+        <!-- 시리즈 데이터 2개 -->
+        <!-- 대부분의 포스터가 세로가 길어서 사이즈 지정을 어떻게 해야 
+         보기 좋은 비율로 나올지 고민해 봐야할 것 같음.........
+         그리고 포스터 이미지가 고화질이 아니라 많이 깨짐(대체 고화질은 어떻게?) 
+         방법: 포스터 URL의 SX300가 가로 300을 의미... SX1000 으로 바꾸면 고화질-->
+      </div>
+    </section>
+    <section class="section-type mb-26.5 max-w-6xl mx-auto px-5">
+      <h2 class="mb-5 font-bold title3">Type</h2>
+      <div class="grid items-center grid-cols-3 gap-5 justify-items-center">
+        <div class="w-full h-auto transition-transform duration-300 hover:scale-105">
+          <img src="./../src/images/frame_movie.png" alt="watch more movies" class="object-cover w-full h-full" />
+        </div>
+        <div class="w-full h-auto transition-transform duration-300 hover:scale-105">
+          <img src="./../src/images/frame_series.png" alt="watch more series" class="object-cover w-full h-full" />
+        </div>
+        <div class="w-full h-auto transition-transform duration-300 hover:scale-105">
+          <img src="./../src/images/frame_episode.png" alt="watch more episodes" class="object-cover w-full h-full" />
+        </div>
+      </div>
+      <!-- 이미지를 클릭하면 movie / series / episode 모음으로 넘어가게 됨 -->
+    </section>
+    <section class="mb-26.5 objec-right mx-12 flex">
+      <img src="./../src/images/main_bg_logo2.png" class="ml-auto" />
+    </section>
+    <!-- 푸터 -->
+    <footer class="flex-col justify-center px-6 text-white">
+      <div class="flex border-t-0.5 border-white mb-9 pt-9">
+        <h2 class="flex-1 text-3xl font-bold">estsoft</h2>
+        <div class="flex gap-10 text-lg">
+          <a href="#"><span>privacy policy</span></a>
+          <a href="#"><span>terms of use</span></a>
+          <a href="#"><span>announcement</span></a>
+          <a href="#"><span>sitemap</span></a>
+        </div>
+      </div>
+      <div class="text-lg mb-14">
+        <!-- 각각 앞에 svg 아이콘 넣는 법... -->
+        <a href="https://maps.app.goo.gl/Y5iuvyFKy7mHWRaQ6" target="_blank">
+          <div class="flex items-center mb-3.5">
+            <img src="./../src/images/map_pin.svg" alt="Address Introduction" class="mr-4.5" />
+            <span>1464-30 Seocho-dong, Seocho-gu, Seoul (06711)</span>
+          </div>
+        </a>
+        <a href="http://www.estsoft.co.kr/" target="_blank">
+          <div class="flex items-center">
+            <img src="./../src/images/globe.svg" alt="homepage link" class="mr-4.5" />
+            <span>http://www.estsoft.co.kr/</span>
+          </div>
+        </a>
+      </div>
+      <div class="flex mb-14">
+        <span class="flex-1"> copyright ⓒ 2025. estsoft 4team. All right reserved. </span>
+        <div class="flex gap-10">
+          <span>TEL : <a href="tel:02-123-4566">02 - 123 - 4566</a></span>
+          <span>FAX : <a href="tel:02-123-4567">02 - 123 - 4567</a></span>
+          <span>E-MAIL : <a href="mailto:estsoft@gmail.com">estsoft@gmail.com</a></span>
+        </div>
+      </div>
+    </footer>
+
+    <button class="fixed z-10 w-20 top-button bottom-5 right-5" type="button">
+      <img src="./../src/images/btn_top.svg" alt="scroll to top" />
+    </button>
+
+    <div class="loading fixed top-0 left-0 w-full h-full container-center-content bg-bg z-[1000]">
+      <div class="spinner"></div>
+    </div>
+  </body>
+</html>

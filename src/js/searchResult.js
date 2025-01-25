@@ -3,11 +3,17 @@ const apiKey = "8e5fae38";
 const baseUrl = "https://www.omdbapi.com/";
 
 // API 요청 함수
-export async function handleSearch(query, searchResults) {
+export async function handleSearch(query, searchResults, year) {
   try {
     // encodeURIComponent() : 특수문자를 포함한 URL 인코딩 함수
     // 사용자의 검색어를 받아서 인코딩 > API에서 검색된 결과를 받아옴
-    const response = await fetch(`${baseUrl}?apikey=${apiKey}&s=${encodeURIComponent(query)}`);
+    let response;
+    if (year === "All years" || year === undefined) {
+      response = await fetch(`${baseUrl}?apikey=${apiKey}&s=${encodeURIComponent(query)}`);
+    } else {
+      response = await fetch(`${baseUrl}?apikey=${apiKey}&s=${encodeURIComponent(query)}&y=${year}`);
+    }
+
     const data = await response.json();
 
     if (data.Response === "True" && data.Search) {
@@ -15,15 +21,18 @@ export async function handleSearch(query, searchResults) {
       displayResults(data.Search, searchResults);
     } else {
       // 검색 결과가 없으면
-      searchResults.innerHTML = '<p class="text-white">검색 결과가 없습니다.</p>';
+      searchResults.innerHTML = `
+        <p class="text-white">No Results<br/> Please Try Again</p>
+      `;
     }
   } catch (error) {
     console.error("API 요청 중 오류 발생:", error);
-    searchResults.innerHTML = "<p >오류가 발생했습니다. 다시 시도해주세요.</p>";
+    searchResults.innerHTML = "<p >Error. Try Again</p>";
   }
 }
 
 export let movieApiId = null;
+
 // 검색 결과 표시 함수
 async function displayResults(results, searchResults) {
   if (searchResults) {

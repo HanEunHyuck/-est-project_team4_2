@@ -51,7 +51,6 @@ export function dropdown(dropdownName, options) {
       optionsList.classList.add("hidden");
       dropdown.classList.remove("active");
       dropdown.querySelector(".button-dropdown").focus();
-      console.log(option);
 
       let additionalInput;
       if (dropdownName === "dropdown1" && option === options[options.length - 1]) {
