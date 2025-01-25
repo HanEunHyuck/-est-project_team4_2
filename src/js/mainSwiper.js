@@ -1,5 +1,5 @@
 import { renderSwiperOptions } from "./swiperOption.js"; // 스와이퍼 옵션
-// import { getPosterUrl } from './movieElement.js'; // 고화질 포스터
+import { getPosterUrl } from './movieElement.js'; // 고화질 포스터
 
 // (1) 데이터를 무작위로 추출 
 //   └ 5개 선택
@@ -41,7 +41,7 @@ export async function loadMainSwiper() {
 
     // 포스터 이미지 있는 데이터만 필터링 
     // main에 호출되는 poster에는 전부 적용할 것
-    // (1) Poster이 존재하고 (2) SX300이 존재하는 경우로 한정
+    // (1) Poster이 존재하고 (2) SX300이 존재하는 경우로 한정(고화질로 뽑게)
     const filteredData = selectedData.filter(
       (movie) => movie.Poster && movie.Poster.includes("SX300")
     );
@@ -88,8 +88,8 @@ export async function loadMainSwiper() {
 // html에 데이터 출력하는 함수 (포스터 있는 경우에 한정)
 async function renderMainSwiper(hdMovies, mainSwiper) {
   for (const movie of hdMovies) {
-    // 이미 포스터 이미지가 있는 데이터만 필터링했기 때문에 변수 지정할 필요가 없음
-    // const posterSrc = movie.Poster;
+    // 고화질이 없으면 저화질 포스터 링크 가져옴
+    const posterSrc = await getPosterUrl(movie.Poster); 
     
     const slide = document.createElement("div");
     slide.classList.add("swiper-slide");
@@ -98,7 +98,7 @@ async function renderMainSwiper(hdMovies, mainSwiper) {
       <div class="absolute top-0 left-0 w-full h-full 
                   bg-gradient-to-t from-primary opacity-25
                   via-transparent to-transparent z-10"></div>
-        <img src="${movie.Poster}" alt="" class="w-full h-full object-cover overflow-hidden"/>
+        <img src="${posterSrc}" alt="" class="w-full h-full object-cover overflow-hidden"/>
       </div>
       <div class="absolute z-50 w-140 
                   top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 

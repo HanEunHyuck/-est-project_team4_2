@@ -1,5 +1,5 @@
 import { renderSwiperOptions } from "./swiperOption.js";
-import { releasedYear } from "./movieElement.js";
+import { getPosterUrl, releasedYear } from "./movieElement.js";
 import { movieDetail } from "./movieDetail.js";
 
 // 영화 스와이퍼
@@ -34,13 +34,8 @@ export async function setSwiper(sort) {
       sortedData = sortDataRating(data);
     }
 
-    // 포스터 이미지 있는 데이터만 필터링 
-    const filteredData = sortedData.filter(
-      (movie) => movie.Poster && movie.Poster.includes("SX300")
-    );
     // 데이터 30개
-    const limitedData = filteredData.slice(0, 30);
-
+    const limitedData = sortedData.slice(0, 30);
 
     // swiper-wrapper에 데이터 출력
     const swiperWrapper = document.querySelector(`.${sort}-swiper .swiper-wrapper`);
@@ -99,9 +94,9 @@ async function renderRatesSwiper(limitedData, swiperWrapper, sort) {
   // 고화질이 없으면 저화질 포스터 링크 가져옴
   // ${movie.Year} 대신 가져오는 개봉연도
   for (const [index, movie] of limitedData.entries()) {
-    // 이미 포스터 이미지가 있는 데이터만 필터링했기 때문에 변수 지정할 필요가 없음
-    // const posterSrc = movie.Poster;
+    // 고화질이 없으면 저화질 포스터 링크 가져옴
     // ${movie.Year} 대신 가져오는 개봉연도
+    const posterSrc = await getPosterUrl(movie.Poster);
     const movieYear = releasedYear(movie.Released);
 
     // swiper-wrapper 내부에 data 가져오기 - html로 출력
@@ -113,10 +108,9 @@ async function renderRatesSwiper(limitedData, swiperWrapper, sort) {
     });
     slide.innerHTML += `
         <div class="relative mb-5">
-            <img src="${movie.Poster}" alt="" class="w-full aspect-[3/4] object-cover 
+            <img src="${posterSrc}" alt="" class="w-full aspect-[3/4] object-cover 
                 transition-transform duration-300 hover:scale-105">
     `;
-    // rates에서만 아래 코드를 이 위치에 추가
     if (sort === "rates") {
       slide.innerHTML += `
               <div class="absolute top-2 left-5 text-white text-44 font-bold z-10">
