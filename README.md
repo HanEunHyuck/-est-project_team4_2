@@ -41,7 +41,7 @@
 - 메인 페이지, 검색 결과 페이지에서의 영화 클릭 시 접근 가능
 - 선택한 영화 제목 개봉연도, 러닝 타임, 평점, 포스터, 줄거리, 장르, 감독, 배우 화면 배치
 
-### 주요기능
+### 기능
 **필수 기능** :
 
 - [x]  영화 제목으로 검색가능하게 하세요.
@@ -58,5 +58,8 @@
 - [x]  영화 포스터가 없을 경우 대체 이미지를 넣으세요.
 - [ ]  영화 상세정보를 고해상도로 출력하세요.
 - [ ]  영화와 관련된 기타 기능을 넣어보세요.
+
+### 배포 사이트
+[zingy-kangaroo-f5ba31.netlify.app](zingy-kangaroo-f5ba31.netlify.app)
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=1572B6&height=150&section=footer" />
