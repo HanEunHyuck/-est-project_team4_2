@@ -4,7 +4,7 @@ import { getPosterUrl } from './movieElement.js';
 export async function loadSeries() {
   try {
     // JSON 데이터 가져오기
-    const response = await fetch("./../src/data/data.json");
+    const response = await fetch("./../assets/data/data.json");
     const data = await response.json();
 
     // "Type" : "series" 데이터 필터링

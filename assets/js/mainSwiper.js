@@ -24,7 +24,7 @@ export async function loadMainSwiper() {
   });
  
   try { // JSON 데이터 가져오기
-    const res = await fetch("./../src/data/data.json"); 
+    const res = await fetch("./../assets/data/data.json"); 
 
     if (!res.ok) {
       throw new Error(res.status);

@@ -47,7 +47,7 @@ async function displayResults(results, searchResults) {
       });
       movieElement.innerHTML = `
           <div class="relative mb-5">
-              <img src="${movie.Poster !== "N/A" ? movie.Poster : "./../src/images/placeholder_img.png"}" 
+              <img src="${movie.Poster !== "N/A" ? movie.Poster : "./../assets/images/placeholder_img.png"}" 
                   alt="" class="w-full aspect-[3/4] object-cover 
                       transition-transform duration-300 hover:scale-105">
           </div>
