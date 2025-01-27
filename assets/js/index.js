@@ -51,15 +51,6 @@ window.addEventListener("scroll", function () {
   }
 });
 
-// 영화 리스트 호출
-// 로컬 값 저장 (인풋, 드롭다운 값 로컬 저장)
-// 로컬 저장 영화 아이디 가져오기
-let updatedId = loadState("updatedId");
-// 로컬 저장 인풋 값 가져오기
-let inputValue = loadState("inputValue");
-// 로컬 저장 년도 값 가져오기
-let selectedYear = loadState("selectedYear");
-
 // 영화 리스트 가져오기
 // 페이지에 영화 리스트가 호출되는 시간을 고려해 setTimeout 사용
 setTimeout(function () {
@@ -153,6 +144,15 @@ async function getResult() {
   // 검색 함수 호출
   await handleSearch(query, searchResults);
 }
+
+// 영화 리스트 호출
+// 로컬 값 저장 (인풋, 드롭다운 값 로컬 저장)
+// 로컬 저장 영화 아이디 가져오기
+let updatedId = loadState("updatedId");
+// 로컬 저장 인풋 값 가져오기
+let inputValue = loadState("inputValue");
+// 로컬 저장 년도 값 가져오기
+let selectedYear = loadState("selectedYear");
 
 // 로컬에 저장된 영화 아이디 값에 해당하는 상세 페이지 출력
 movieDetail(updatedId);
