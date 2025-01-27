@@ -51,6 +51,22 @@ window.addEventListener("scroll", function () {
   }
 });
 
+// 로컬 저장 영화 아이디 가져오기
+/** 
+ * 아이디 값 분리
+ * 메인에서 클릭한 아이디값
+ * 검색결과에서 클릭한 아이디 값
+ * 같은 저장소 아이디에 담았더니 최신화 오류로 인한 조치
+ */ 
+let updatedId = loadState("updatedId");
+let searchUpdatedId = loadState("searchUpdatedId");
+// 로컬 저장 인풋 값 가져오기
+let inputValue = loadState("inputValue");
+// 로컬 저장 년도 값 가져오기
+let selectedYear = loadState("selectedYear");
+
+let searchPageMovie = loadState("searchPageMovie");
+
 // 영화 리스트 가져오기
 // 페이지에 영화 리스트가 호출되는 시간을 고려해 setTimeout 사용
 setTimeout(function () {
@@ -60,13 +76,14 @@ setTimeout(function () {
     movie.addEventListener("click", function () {
       // 검색 결과에 있는 영화 클릭 시
       if (movie.classList.contains("search-result")) {
-        saveState("updatedId", movieApiId);
+        searchPageMovie = true;
+        saveState("searchUpdatedId", movieApiId);
       } else {
         // 메인에 있는 영화 클릭 시
+        searchPageMovie = false;
         saveState("updatedId", movieId);
       }
-      // updateId 에 클릭한 영화 Id값 저장
-      updatedId = loadState("updatedId");
+      saveState("searchPageMovie", searchPageMovie);
     });
   });
 }, 250);
@@ -145,14 +162,10 @@ async function getResult() {
   await handleSearch(query, searchResults);
 }
 
-// 영화 리스트 호출
-// 로컬 값 저장 (인풋, 드롭다운 값 로컬 저장)
-// 로컬 저장 영화 아이디 가져오기
-let updatedId = loadState("updatedId");
-// 로컬 저장 인풋 값 가져오기
-let inputValue = loadState("inputValue");
-// 로컬 저장 년도 값 가져오기
-let selectedYear = loadState("selectedYear");
-
 // 로컬에 저장된 영화 아이디 값에 해당하는 상세 페이지 출력
-movieDetail(updatedId);
+// 가져오는 아이디 값 분리 (메인 페이지, 검색 결과 페이지)
+if (searchPageMovie === true) {
+  movieDetail(searchUpdatedId);
+} else {
+  movieDetail(updatedId);
+}
