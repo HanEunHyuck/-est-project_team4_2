@@ -1,6 +1,18 @@
+import { saveState } from "./saveData.js";
+
+// 년도 선택
+const years = ["All years", "2023", "2022", "2021", "2020", "Enter directly"];
+
 export function dropdown(dropdownName, options) {
+
   // 드롭다운 구분
   const dropdown = document.querySelector(`.${dropdownName}`);
+  
+  if (!dropdown) return;
+
+  if(options =="years") {
+    options = years;
+  }
 
   // 드롭다운 버튼
   const dropdownButton = dropdown.querySelector(".button-dropdown");
@@ -26,6 +38,17 @@ export function dropdown(dropdownName, options) {
       dropdown.classList.add("active");
     }
   });
+
+  const yearValue = dropdown.querySelector(".value");
+  // 년도 직접 입력 시
+  if (yearValue.innerHTML === "Enter directly") {
+    let inputYear;
+    inputYear = dropdown.nextElementSibling.querySelector("input");
+    saveState("selectedYear", inputYear.value);
+  } else {
+    // 드롭 다운 옵션으로 선택 시
+    saveState("selectedYear", yearValue.innerHTML);
+  }
 
   options.forEach((option, index) => {
     const optionItem = document.createElement("li");

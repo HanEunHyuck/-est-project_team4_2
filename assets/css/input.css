@@ -159,6 +159,9 @@
 .swiper-pagination-bullet {
   @apply bg-active mr-7.5 !important;
 }
+.swiper-pagination-bullet:last-child {
+  @apply mr-0 !important;
+}
 .swiper-pagination-bullet-active {
   @apply bg-primary !important;
 }

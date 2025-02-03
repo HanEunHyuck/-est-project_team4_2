@@ -1,8 +1,13 @@
 import { renderSwiperOptions } from "./swiperOption.js";
 import { releasedYear } from "./movieElement.js";
+import { saveState } from "./saveData.js";
 
 // 영화 스와이퍼
 export async function setSwiper(sort) {
+  const swiperSort = document.querySelector(`.section-${sort}`);
+
+  if (!swiperSort) return;
+
   // '스와이퍼 옵션' 함수 호출
   const swiperOptions = renderSwiperOptions({
     loop: false, // 자동 루프x
@@ -33,13 +38,10 @@ export async function setSwiper(sort) {
       sortedData = sortDataRating(data);
     }
 
-    // 포스터 이미지 있는 데이터만 필터링 
-    const filteredData = sortedData.filter(
-      (movie) => movie.Poster && movie.Poster.includes("SX300")
-    );
+    // 포스터 이미지 있는 데이터만 필터링
+    const filteredData = sortedData.filter((movie) => movie.Poster && movie.Poster.includes("SX300"));
     // 데이터 30개
     const limitedData = filteredData.slice(0, 30);
-
 
     // swiper-wrapper에 데이터 출력
     const swiperWrapper = document.querySelector(`.${sort}-swiper .swiper-wrapper`);
@@ -51,6 +53,7 @@ export async function setSwiper(sort) {
     new Swiper(`.${sort}-swiper`, swiperOptions);
   } catch (err) {
     console.error(err);
+  } finally {
   }
 }
 
@@ -90,7 +93,6 @@ function sortDataRating(data) {
   });
 }
 
-export let movieId = null;
 // 스와이퍼 내부에 '출력'하는 '최신개봉순' 함수
 async function renderRatesSwiper(limitedData, swiperWrapper, sort) {
   for (const [index, movie] of limitedData.entries()) {
@@ -100,8 +102,8 @@ async function renderRatesSwiper(limitedData, swiperWrapper, sort) {
     const slide = document.createElement("div");
     slide.classList.add("swiper-slide", "cursor-pointer", "movie");
     slide.addEventListener("click", () => {
-      movieId = movie.imdbID;
-      window.location.href="./sub/info.html";
+      saveState("updatedId", movie.imdbID);
+      window.location.href = "./sub/info.html";
     });
     slide.innerHTML += `
         <div class="relative mb-5">

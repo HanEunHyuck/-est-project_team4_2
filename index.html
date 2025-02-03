@@ -12,6 +12,7 @@
     />
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="module" src="./assets/js/common.js"></script>
     <script type="module" src="./assets/js/index.js"></script>
   </head>
   <body class="bg-bg">
@@ -96,44 +97,18 @@
     <section class="mb-26.5 mx-12">
       <img src="./../assets/images/main_bg_logo1.png" />
     </section>
-    <section class="section-series mb-26.5 max-w-6xl mx-auto px-5">
-      <div class="flex items-center justify-between">
-        <h2 class="mb-5 font-bold title3">Series</h2>
-      </div>
-      <div
-        class="grid items-center justify-center grid-cols-2 gap-5 overflow-hidden series-wrapper h-150"
-      ></div>
-    </section>
     <section class="section-type mb-26.5 max-w-6xl mx-auto px-5">
       <h2 class="mb-5 font-bold title3">Type</h2>
       <div class="grid items-center grid-cols-3 gap-5 justify-items-center">
-        <div
-          class="w-full h-auto transition-transform duration-300 hover:scale-105"
-        >
-          <img
-            src="./../assets/images/frame_movie.png"
-            alt="watch more movies"
-            class="object-cover w-full h-full"
-          />
-        </div>
-        <div
-          class="w-full h-auto transition-transform duration-300 hover:scale-105"
-        >
-          <img
-            src="./../assets/images/frame_series.png"
-            alt="watch more series"
-            class="object-cover w-full h-full"
-          />
-        </div>
-        <div
-          class="w-full h-auto transition-transform duration-300 hover:scale-105"
-        >
-          <img
-            src="./../assets/images/frame_episode.png"
-            alt="watch more episodes"
-            class="object-cover w-full h-full"
-          />
-        </div>
+        <button type="button" class="w-full h-auto transition-transform duration-300 hover:scale-105 type-movie">
+          <img src="./../assets/images/frame_movie.png" alt="watch more movies" class="object-cover w-full h-full" />
+        </button>
+        <button type="button" class="w-full h-auto transition-transform duration-300 hover:scale-105 type-series">
+          <img src="./../assets/images/frame_series.png" alt="watch more series" class="object-cover w-full h-full" />
+        </button>
+        <button type="button" class="w-full h-auto transition-transform duration-300 hover:scale-105 type-episode">
+          <img src="./../assets/images/frame_episode.png" alt="watch more episodes" class="object-cover w-full h-full" />
+        </button>
       </div>
     </section>
     <section class="mb-26.5 objec-right mx-12 flex">
