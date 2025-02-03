@@ -7,7 +7,6 @@ export function renderSwiperOptions({
   usePagination = true, // 메인 슬라이드에서만 사용 
   nextEl= '.swiper-button-next', // next 버튼
   prevEl= '.swiper-button-prev', // prev 버튼
-  // breakpoints = { }, // 반응형 
 }) 
 {
   const options = {
@@ -23,13 +22,6 @@ export function renderSwiperOptions({
         delay: autoplayDelay,
         disableOnInteraction: disableAutoplayOnInteraction,
     },
-    // ▼ 반응형 할 때 사용
-    // breakpoints: { 
-    //   768: {
-    //         slidesPerView: 3,
-    //         spaceBetween: 20,
-    //   },
-    // },
   };
   if (usePagination) {
       options.pagination= {
