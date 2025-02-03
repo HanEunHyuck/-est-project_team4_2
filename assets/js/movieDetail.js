@@ -64,7 +64,7 @@ export async function movieDetail(movieId) {
     // movie-poster 데이터 출력
     if (document.querySelector(".movie-poster")) {
       const moviePoster = document.querySelector(".movie-poster");
-      const placeholderImage = "/placeholder.svg"; // 대체 이미지 경로
+      const placeholderImage = "./../assets/images/placeholder_img.png"; // 대체 이미지 경로
 
       // movie-poster 데이터 불러오기
       if (data.Poster && data.Poster !== "N/A") {

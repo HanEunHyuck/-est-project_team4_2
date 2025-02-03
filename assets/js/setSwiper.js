@@ -40,8 +40,8 @@ export async function setSwiper(sort) {
 
     // 포스터 이미지 있는 데이터만 필터링
     const filteredData = sortedData.filter((movie) => movie.Poster && movie.Poster.includes("SX300"));
-    // 데이터 30개
-    const limitedData = filteredData.slice(0, 30);
+    // 데이터 15개
+    const limitedData = filteredData.slice(0, 15);
 
     // swiper-wrapper에 데이터 출력
     const swiperWrapper = document.querySelector(`.${sort}-swiper .swiper-wrapper`);
@@ -100,25 +100,27 @@ async function renderRatesSwiper(limitedData, swiperWrapper, sort) {
 
     // swiper-wrapper 내부에 data 가져오기 - html로 출력
     const slide = document.createElement("div");
-    slide.classList.add("swiper-slide", "cursor-pointer", "movie");
-    slide.addEventListener("click", () => {
+    slide.classList.add("swiper-slide");
+    const movieEl = document.createElement("a");
+    movieEl.classList.add("group/item");
+    movieEl.setAttribute("href", "./sub/info.html");
+    movieEl.addEventListener("click", () => {
       saveState("updatedId", movie.imdbID);
-      window.location.href = "./sub/info.html";
     });
-    slide.innerHTML += `
-        <div class="relative mb-5">
-            <img src="${movie.Poster}" alt="" class="w-full aspect-[3/4] object-cover 
-                transition-transform duration-300 hover:scale-105">
+    movieEl.innerHTML += `
+        <div class="relative mb-5 overflow-hidden">
+          <img src="${movie.Poster}" alt="" class="w-full aspect-[3/4] object-cover 
+              transition-transform duration-300 group-hover/item:scale-105">
     `;
     // rates에서만 아래 코드를 이 위치에 추가
     if (sort === "rates") {
-      slide.innerHTML += `
-              <div class="absolute top-2 left-5 text-white text-44 font-bold z-10">
-                  ${index + 1}
-              </div>
+      movieEl.innerHTML += `
+        <div class="absolute top-2 left-5 text-white text-44 font-bold z-10">
+            ${index + 1}
+        </div>
       `;
     }
-    slide.innerHTML += `
+    movieEl.innerHTML += `
         </div>
         <h3 class="text-2xl text-white mb-4 font-semibold truncate">${movie.Title}</h3>
         <div>
@@ -126,6 +128,7 @@ async function renderRatesSwiper(limitedData, swiperWrapper, sort) {
             <span class="text-xl text-primary">${movie.imdbRating}</span>
         </div>
     `;
+    slide.appendChild(movieEl);
     swiperWrapper.appendChild(slide);
   }
 }
