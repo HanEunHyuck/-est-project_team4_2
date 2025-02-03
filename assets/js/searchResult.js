@@ -59,13 +59,3 @@ async function displayResults(results, searchResults) {
   }
 }
 
-// 검색 결과 수 출력
-// export function resultCount(count) {
-//     //result-count에 출력함
-//     const resultCountEl = document.querySelector(".result-count");
-//         if (resultCountEl) {
-//         resultCountEl.textContent = `${count}`;
-//     } else {
-//         console.error(error);
-//     }
-// }

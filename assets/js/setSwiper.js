@@ -92,15 +92,8 @@ function sortDataRating(data) {
 
 export let movieId = null;
 // 스와이퍼 내부에 '출력'하는 '최신개봉순' 함수
-// swiper-wrapper 내부에 data 가져오기 - html로 출력
-// 여기서 limitedData로 받아야 10개만 출력할 수 있음
 async function renderRatesSwiper(limitedData, swiperWrapper, sort) {
-  // 고화질이 없으면 저화질 포스터 링크 가져옴
-  // ${movie.Year} 대신 가져오는 개봉연도
   for (const [index, movie] of limitedData.entries()) {
-    // 이미 포스터 이미지가 있는 데이터만 필터링했기 때문에 변수 지정할 필요가 없음
-    // const posterSrc = movie.Poster;
-    // ${movie.Year} 대신 가져오는 개봉연도
     const movieYear = releasedYear(movie.Released);
 
     // swiper-wrapper 내부에 data 가져오기 - html로 출력
