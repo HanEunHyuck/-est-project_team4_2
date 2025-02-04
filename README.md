@@ -57,6 +57,6 @@
 - [ ]  영화와 관련된 기타 기능을 넣어보세요.
 
 ### 배포 사이트
-[zingy-kangaroo-f5ba31.netlify.app](zingy-kangaroo-f5ba31.netlify.app)
+[https://est-cinescope.netlify.app/](https://est-cinescope.netlify.app/)
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=1572B6&height=150&section=footer" />
